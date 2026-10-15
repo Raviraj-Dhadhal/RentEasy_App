@@ -24,23 +24,23 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header
+              // Screen-specific custom widget: Displays logo, sign-up title, and subtitle
               const AppSignUpHeader(),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Form
+              // Screen-specific custom widget: Contains registration fields (Name, Email, Phone, Passwords, Terms checkbox)
               AppSignUpForm(),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Divider
+              // Shared reusable widget: Divides registration form from social sign-up options
               const AppformDivider(dividerText: AppTexts.or),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Social Buttons
+              // Shared reusable widget: Third-party social registration buttons
               const AppSocialButtons(),
               const SizedBox(height: 28),
 
-              // Footer: Already have an account? Sign In
+              // Footer: Navigation link to Login screen for returning users
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

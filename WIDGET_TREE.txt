@@ -1,0 +1,2754 @@
+// ================================================================================
+//                    RENTEASY FLUTTER APPLICATION WIDGET TREE
+// ================================================================================
+// Generated from actual source code in lib/
+// Architecture: Feature-First Clean Architecture with GetX
+// ================================================================================
+
+
+// ================================================================================
+// APP ROOT / MAIN ENTRY
+// FILE: lib/main.dart
+// ================================================================================
+
+RentEasyApp
+└── GetMaterialApp
+    └── (theme: ThemeData)
+    └── (home: SplashScreen)
+
+
+// ================================================================================
+// SPLASH SCREEN
+// FILE: lib/features/authentication/screens/splash_screen.dart
+// ================================================================================
+
+SplashScreen
+└── Scaffold
+    └── Center
+        └── Column
+            ├── SvgPicture.asset
+            │   └── (placeholderBuilder: SizedBox -> Center -> CircularProgressIndicator)
+            ├── Text ('RentEasy')
+            └── Text ('Smart Rental & Roommate Finder')
+
+
+// ================================================================================
+// ONBOARDING SCREEN
+// FILE: lib/features/authentication/screens/onboarding/onboarding.dart
+// ================================================================================
+
+OnBoardingScreen
+└── Scaffold
+    └── Stack
+        ├── PageView
+        │   ├── OnBoardingPage
+        │   ├── OnBoardingPage
+        │   └── OnBoardingPage
+        ├── OnBoardingSkip
+        ├── OnBoardingDotNavigation
+        └── OnBoardingElevatedButton
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OnBoardingPage
+// FILE: lib/features/authentication/screens/onboarding/widgets/onboarding_page.dart
+// ================================================================================
+
+OnBoardingPage
+└── Padding
+    └── Column
+        ├── Image (AssetImage)
+        ├── Text (title)
+        ├── SizedBox (height: 8)
+        └── Text (subTitle)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OnBoardingSkip
+// FILE: lib/features/authentication/screens/onboarding/widgets/onboarding_skip.dart
+// ================================================================================
+
+OnBoardingSkip
+└── Positioned
+    └── TextButton
+        └── Text ('Skip')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OnBoardingDotNavigation
+// FILE: lib/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart
+// ================================================================================
+
+OnBoardingDotNavigation
+└── Positioned
+    └── Center
+        └── SmoothPageIndicator
+            └── (effect: ExpandingDotsEffect)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OnBoardingElevatedButton
+// FILE: lib/features/authentication/screens/onboarding/widgets/onboarding_elevated_button.dart
+// ================================================================================
+
+OnBoardingElevatedButton
+└── Positioned
+    └── Padding
+        └── SizedBox (width: double.infinity, height: 50)
+            └── ElevatedButton
+                └── Row
+                    ├── Text ('Continue')
+                    ├── SizedBox (width: 8)
+                    └── Icon (Icons.arrow_forward)
+
+
+// ================================================================================
+// LOGIN SCREEN
+// FILE: lib/features/authentication/screens/login/login.dart
+// ================================================================================
+
+LoginScreen
+└── Scaffold
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── AppLoginHeader
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppLoginForm
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppformDivider
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppSocialButtons
+                ├── SizedBox (height: 28)
+                ├── Row
+                │   ├── Text (AppTexts.dontHaveAccount)
+                │   └── GestureDetector (onTap: Get.to(SignUpScreen))
+                │       └── Text (AppTexts.signUp)
+                └── SizedBox (height: 16)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppLoginHeader
+// FILE: lib/features/authentication/screens/login/widgets/login_header.dart
+// ================================================================================
+
+AppLoginHeader
+└── Column
+    ├── SvgPicture.asset
+    ├── SizedBox (height: 24)
+    ├── Text (AppTexts.loginTitle)
+    ├── SizedBox (height: 8)
+    └── Text (AppTexts.loginSubTitle)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppLoginForm
+// FILE: lib/features/authentication/screens/login/widgets/login_form.dart
+// ================================================================================
+
+AppLoginForm
+└── Form
+    └── Column
+        ├── TextFormField (Email)
+        │   └── (decoration: InputDecoration)
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── TextFormField (Password)
+        │   └── (decoration: InputDecoration -> suffixIcon: Icon(Icons.remove_red_eye))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields / 2)
+        ├── Align
+        │   └── TextButton (onPressed: Get.to(ForgotPassScreen))
+        │       └── Text (AppTexts.forgetPassword)
+        ├── SizedBox (height: AppSizes.spaceBtwSections)
+        └── SizedBox (width: double.infinity)
+            └── ElevatedButton (onPressed: validate & navigate to NavigationMenu)
+                └── Text (AppTexts.signIn)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppformDivider
+// FILE: lib/commons/widgets/login_signup/form_divider.dart
+// ================================================================================
+
+AppformDivider
+└── Row
+    ├── Flexible
+    │   └── Divider
+    ├── Text (dividerText)
+    └── Flexible
+        └── Divider
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppSocialButtons
+// FILE: lib/commons/widgets/login_signup/social_buttons.dart
+// ================================================================================
+
+AppSocialButtons
+└── SizedBox (width: double.infinity)
+    └── OutlinedButton
+        └── Row
+            ├── Image.asset (images.GoogleLogo)
+            ├── SizedBox (width: 8)
+            └── Text (AppTexts.continueWithGoogle)
+
+
+// ================================================================================
+// SIGN UP SCREEN
+// FILE: lib/features/authentication/screens/sign_up/sign_up.dart
+// ================================================================================
+
+SignUpScreen
+└── Scaffold
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── AppSignUpHeader
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppSignUpForm
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppformDivider
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── AppSocialButtons
+                ├── SizedBox (height: 28)
+                ├── Row
+                │   ├── Text (AppTexts.alreadyHaveAccount)
+                │   └── GestureDetector (onTap: Get.offAll(LoginScreen))
+                │       └── Text (AppTexts.signIn)
+                └── SizedBox (height: 16)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppSignUpHeader
+// FILE: lib/features/authentication/screens/sign_up/widgets/sign_up_header.dart
+// ================================================================================
+
+AppSignUpHeader
+└── Column
+    ├── SvgPicture.asset
+    ├── SizedBox (height: 24)
+    ├── Text (AppTexts.createAccountTitle)
+    ├── SizedBox (height: 8)
+    └── Text (AppTexts.createAccountSubTitle)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppSignUpForm
+// FILE: lib/features/authentication/screens/sign_up/widgets/sign_up_form.dart
+// ================================================================================
+
+AppSignUpForm
+└── Form
+    └── Column
+        ├── TextFormField (FullName)
+        │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.person_outline))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── TextFormField (Email)
+        │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.mail_outline))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── TextFormField (PhoneNumber)
+        │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.phone_outlined))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── TextFormField (Password)
+        │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.lock_outline), suffixIcon: Icon(Icons.remove_red_eye))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── TextFormField (ConfirmPassword)
+        │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.lock_reset), suffixIcon: Icon(Icons.remove_red_eye))
+        ├── SizedBox (height: AppSizes.spaceBtwInputFields)
+        ├── AppTermsAndConditionsCheckbox
+        ├── SizedBox (height: AppSizes.spaceBtwSections)
+        └── SizedBox (width: double.infinity)
+            └── ElevatedButton (onPressed: validate & navigate to VerifyEmailScreen)
+                └── Text (AppTexts.createAccount)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AppTermsAndConditionsCheckbox
+// FILE: lib/features/authentication/screens/sign_up/widgets/terms_and_conditions_checkbox.dart
+// ================================================================================
+
+AppTermsAndConditionsCheckbox
+└── Row
+    ├── SizedBox (width: 24, height: 24)
+    │   └── Checkbox (value: true)
+    ├── SizedBox (width: 10)
+    └── Expanded
+        └── Text.rich
+            └── TextSpan
+                ├── TextSpan (AppTexts.iAgreeTo)
+                ├── TextSpan (AppTexts.terms, recognizer: onTap -> Get.to(TermsOfUseScreen))
+                ├── TextSpan (AppTexts.and)
+                └── TextSpan (AppTexts.privacyPolicy, recognizer: onTap -> Get.to(PrivacyPolicyScreen))
+
+
+// ================================================================================
+// VERIFY EMAIL SCREEN
+// FILE: lib/features/authentication/screens/sign_up/verify_email.dart
+// ================================================================================
+
+VerifyEmailScreen
+└── Scaffold
+    ├── AppBar
+    │   ├── IconButton (leading, icon: Icon(Icons.arrow_back), onPressed: Get.back)
+    │   └── Text (title: AppTexts.splashTitle)
+    └── SingleChildScrollView
+        └── Padding
+            └── Container
+                └── Column
+                    ├── SizedBox (height: 10)
+                    ├── Container (Shield Icon Badge)
+                    │   └── Center
+                    │       └── Icon (Icons.shield_outlined)
+                    ├── SizedBox (height: 24)
+                    ├── Text (AppTexts.verifyIdentity)
+                    ├── SizedBox (height: 10)
+                    ├── Text (AppTexts.verifyIdentitySubtitle)
+                    ├── SizedBox (height: 28)
+                    ├── Row (6 OTP Circular Bubble Fields)
+                    │   ├── Container (OTP Bubble 1)
+                    │   │   └── Center -> Text ('')
+                    │   ├── Container (OTP Bubble 2)
+                    │   │   └── Center -> Text ('')
+                    │   ├── Container (OTP Bubble 3)
+                    │   │   └── Center -> Text ('')
+                    │   ├── Container (OTP Bubble 4)
+                    │   │   └── Center -> Text ('')
+                    │   ├── Container (OTP Bubble 5)
+                    │   │   └── Center -> Text ('')
+                    │   └── Container (OTP Bubble 6)
+                    │       └── Center -> Text ('')
+                    ├── SizedBox (height: 28)
+                    ├── Text (AppTexts.didntReceiveCode)
+                    ├── SizedBox (height: 4)
+                    ├── GestureDetector (onTap: resendOTP)
+                    │   └── Text (AppTexts.resendOTP)
+                    ├── SizedBox (height: 32)
+                    ├── SizedBox (width: double.infinity)
+                    │   └── ElevatedButton (onPressed: Get.to(SuccessScreen))
+                    │       └── Text (AppTexts.verifyOTP)
+                    └── SizedBox (height: 10)
+
+
+// ================================================================================
+// FORGOT PASSWORD SCREEN
+// FILE: lib/features/authentication/screens/pass_config/forgot_pass.dart
+// ================================================================================
+
+ForgotPassScreen
+└── Scaffold
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── Text (AppTexts.forgetPasswordTitle)
+                ├── SizedBox (height: 8)
+                ├── Text (AppTexts.forgetPasswordSubtitle)
+                ├── SizedBox (height: 32)
+                ├── Center
+                │   └── Container (Lock Icon Badge)
+                │       └── Center
+                │           └── Icon (Icons.lock_reset_rounded)
+                ├── SizedBox (height: 36)
+                ├── Form
+                │   └── Column
+                │       ├── TextFormField (Email)
+                │       │   └── (decoration: InputDecoration -> prefixIcon: Icon(Icons.mail_outline))
+                │       ├── SizedBox (height: 24)
+                │       └── SizedBox (width: double.infinity)
+                │           └── ElevatedButton (onPressed: validate & navigate to ResetPassScreen)
+                │               └── Row
+                │                   ├── Text (AppTexts.sendResetLink)
+                │                   ├── SizedBox (width: 8)
+                │                   └── Icon (Icons.send_rounded)
+                ├── SizedBox (height: 20)
+                └── Center
+                    └── TextButton (onPressed: Get.back)
+                        └── Text (AppTexts.backToSignIn)
+
+
+// ================================================================================
+// RESET PASSWORD SCREEN
+// FILE: lib/features/authentication/screens/pass_config/reset_pass.dart
+// ================================================================================
+
+ResetPassScreen
+└── Scaffold
+    ├── AppBar
+    │   └── IconButton (action, icon: Icon(Icons.clear), onPressed: Get.offAll(LoginScreen))
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── SizedBox (height: 20)
+                ├── Container (Email Read Badge)
+                │   └── Icon (Icons.mark_email_read_outlined)
+                ├── SizedBox (height: 32)
+                ├── Text (AppTexts.changeYourPasswordTitle)
+                ├── SizedBox (height: 12)
+                ├── Text (AppTexts.changeYourPasswordSubtitle)
+                ├── SizedBox (height: 32)
+                ├── SizedBox (width: double.infinity)
+                │   └── ElevatedButton (onPressed: Get.offAll(LoginScreen))
+                │       └── Text ('Done')
+                ├── SizedBox (height: 16)
+                └── SizedBox (width: double.infinity)
+                    └── TextButton (onPressed: resendEmail)
+                        └── Text (AppTexts.resendEmail)
+
+
+// ================================================================================
+// TERMS OF USE SCREEN
+// FILE: lib/features/authentication/screens/terms_privacy/terms_of_use.dart
+// ================================================================================
+
+TermsOfUseScreen
+└── Scaffold
+    ├── AppBar
+    │   ├── IconButton (leading, icon: Icon(Icons.arrow_back), onPressed: Get.back)
+    │   └── Text (title: AppTexts.termsOfUse)
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── Text ('1. Acceptance of Terms')
+                ├── SizedBox (height: 8)
+                ├── Text ('By accessing or using RentEasy...')
+                ├── SizedBox (height: 20)
+                ├── Text ('2. User Accounts')
+                ├── SizedBox (height: 8)
+                ├── Text ('You are responsible for maintaining...')
+                ├── SizedBox (height: 20)
+                ├── Text ('3. Rental Listings & Agreements')
+                ├── SizedBox (height: 8)
+                └── Text ('All rental listings and roommate pairings...')
+
+
+// ================================================================================
+// PRIVACY POLICY SCREEN
+// FILE: lib/features/authentication/screens/terms_privacy/privacy_policy.dart
+// ================================================================================
+
+PrivacyPolicyScreen
+└── Scaffold
+    ├── AppBar
+    │   ├── IconButton (leading, icon: Icon(Icons.arrow_back), onPressed: Get.back)
+    │   └── Text (title: AppTexts.privacyPolicy)
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── Text ('1. Information We Collect')
+                ├── SizedBox (height: 8)
+                ├── Text ('We collect information you provide directly...')
+                ├── SizedBox (height: 20)
+                ├── Text ('2. How We Use Your Information')
+                ├── SizedBox (height: 8)
+                ├── Text ('We use your data to facilitate rental matches...')
+                ├── SizedBox (height: 20)
+                ├── Text ('3. Data Protection & Security')
+                ├── SizedBox (height: 8)
+                └── Text ('We implement strict technical and organizational...')
+
+
+// ================================================================================
+// SUCCESS SCREEN (COMMON REUSABLE PAGE)
+// FILE: lib/commons/widgets/success_screen/success_screen.dart
+// ================================================================================
+
+SuccessScreen
+└── Scaffold
+    └── SingleChildScrollView
+        └── Padding
+            └── Column
+                ├── SizedBox (height: 40)
+                ├── [Condition: if (image != null)]
+                │   └── Image.asset (image!)
+                │   [Condition: else]
+                │   └── Container (shape: BoxShape.circle)
+                │       └── Icon (Icons.check_circle_rounded)
+                ├── SizedBox (height: 32)
+                ├── Text (title)
+                ├── SizedBox (height: 12)
+                ├── Text (subTitle)
+                ├── SizedBox (height: 36)
+                └── SizedBox (width: double.infinity)
+                    └── ElevatedButton (onPressed: onPressed)
+                        └── Text ('Continue')
+
+
+// ================================================================================
+// NAVIGATION MENU (APPLICATION CONTAINER / SHELL)
+// FILE: lib/navigation_menu.dart
+// ================================================================================
+
+NavigationMenu
+└── Scaffold
+    ├── Obx (bottomNavigationBar)
+    │   └── NavigationBar
+    │       ├── NavigationDestination (icon: Icon(Icons.home), label: 'Home', selectedIcon: Icon(Icons.home))
+    │       ├── NavigationDestination (icon: Icon(Icons.search), label: 'Search', selectedIcon: Icon(Icons.search))
+    │       ├── NavigationDestination (icon: Icon(Iconsax.heart), label: 'Wishlist', selectedIcon: Icon(Iconsax.heart))
+    │       ├── NavigationDestination (icon: Icon(Iconsax.people), label: 'Comp', selectedIcon: Icon(Iconsax.people))
+    │       └── NavigationDestination (icon: Icon(Iconsax.user_search), label: 'Profile', selectedIcon: Icon(Iconsax.user_search))
+    └── Obx (body)
+        └── [Indexed Tab View: controller.screens[controller.selectedIndex.value]]
+            ├── Tab 0: HomeScreen
+            ├── Tab 1: SearchScreen
+            ├── Tab 2: WishlistScreen
+            ├── Tab 3: FindRoommateScreen
+            └── Tab 4: ProfileScreen
+
+
+// ================================================================================
+// HOME SCREEN
+// FILE: lib/features/pg/screens/home/home.dart
+// ================================================================================
+
+HomeScreen
+└── Scaffold
+    ├── SingleChildScrollView (body)
+    │   └── Column
+    │       ├── Container (Header Area)
+    │       │   └── Column
+    │       │       └── RAppBar
+    │       │           └── (trailing: GestureDetector -> Container -> CircleAvatar)
+    │       └── Padding
+    │           └── Column
+    │               ├── SizedBox (height: 8.0)
+    │               ├── RSearchContainer
+    │               ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │               ├── HomeCategoryChips
+    │               ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │               ├── HomePromoBanner
+    │               ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │               ├── HomeFeaturedSection
+    │               ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │               ├── HomeNearbySection
+    │               └── SizedBox (height: 36.0)
+    └── RFloatingActionButton (floatingActionButton, heroTag: 'home_fab')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: HomeCategoryChips
+// FILE: lib/features/pg/screens/home/widgets/home_category_chips.dart
+// ================================================================================
+
+HomeCategoryChips
+└── Column
+    ├── SingleChildScrollView (scrollDirection: Axis.horizontal)
+    │   └── Row
+    │       ├── Padding -> RFilterChipPill (label: 'Flat')
+    │       ├── Padding -> RFilterChipPill (label: 'PG')
+    │       ├── Padding -> RFilterChipPill (label: 'Room')
+    │       └── Padding -> RFilterChipPill (label: 'Roommate')
+    ├── SizedBox (height: 8.0)
+    └── SingleChildScrollView (scrollDirection: Axis.horizontal)
+        └── Row
+            ├── Padding -> RFilterChipPill (label: 'Hostel')
+            ├── Padding -> RFilterChipPill (label: 'Villa')
+            ├── Padding -> RFilterChipPill (label: 'Studio')
+            └── Padding -> RFilterChipPill (label: 'Co-Living')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: HomePromoBanner
+// FILE: lib/features/pg/screens/home/widgets/home_promo_banner.dart
+// ================================================================================
+
+HomePromoBanner
+└── Container (gradient: AppColors.linearBoxGradient)
+    └── Row
+        ├── Expanded
+        │   └── Column
+        │       ├── Text ('Find your\nperfect stay')
+        │       ├── SizedBox (height: 14.0)
+        │       └── GestureDetector (onTap: Get.to(SearchScreen))
+        │           └── Container
+        │               └── Text ('Explore Now')
+        └── Icon (Icons.apartment_rounded)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: HomeFeaturedSection
+// FILE: lib/features/pg/screens/home/widgets/home_featured_section.dart
+// ================================================================================
+
+HomeFeaturedSection
+└── Column
+    ├── RSectionHeading (title: 'Featured Properties', buttonTitle: 'See All', onPressed: Get.to(FeaturedPropertiesScreen))
+    ├── SizedBox (height: 12.0)
+    ├── RPropertyCardVertical (Luxury Studio)
+    ├── SizedBox (height: 16.0)
+    └── RPropertyCardVertical (Skyline Penthouse)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: HomeNearbySection
+// FILE: lib/features/pg/screens/home/widgets/home_nearby_section.dart
+// ================================================================================
+
+HomeNearbySection
+└── Column
+    ├── RSectionHeading (title: 'Nearby You', buttonTitle: 'View Map', onPressed: Get.to(NearbyPropertiesScreen))
+    ├── SizedBox (height: 12.0)
+    └── SingleChildScrollView (scrollDirection: Axis.horizontal)
+        └── Row
+            ├── RPropertyCardHorizontal (Cozy Urban Nest)
+            ├── SizedBox (width: 12.0)
+            ├── RPropertyCardHorizontal (Comfort PG Stay)
+            ├── SizedBox (width: 12.0)
+            └── RPropertyCardHorizontal (Modern Studio Flat)
+
+
+// ================================================================================
+// SEARCH SCREEN
+// FILE: lib/features/pg/screens/search/search.dart
+// ================================================================================
+
+SearchScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Search')
+    │   └── (trailing: IconButton(Icons.tune, onPressed: Get.to(FilterScreen)))
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── RSearchContainer (readOnly: false, controller: searchController)
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           ├── SearchRecentList
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           ├── SearchPopularGrid
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           ├── RSectionHeading (title: 'Quick Filters', showActionButton: false)
+    │           ├── SizedBox (height: 12.0)
+    │           ├── SingleChildScrollView (scrollDirection: Axis.horizontal)
+    │           │   └── Row
+    │           │       ├── Padding -> RFilterChipPill (label: 'Flat')
+    │           │       ├── Padding -> RFilterChipPill (label: 'PG')
+    │           │       ├── Padding -> RFilterChipPill (label: 'Room')
+    │           │       └── Padding -> RFilterChipPill (label: 'Roommate')
+    │           └── SizedBox (height: 24.0)
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── ElevatedButton.icon (onPressed: Get.to(PropertyListScreen))
+                ├── Icon (Icons.search)
+                └── Text ('Show Properties')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: SearchRecentList
+// FILE: lib/features/pg/screens/search/widgets/search_recent_list.dart
+// ================================================================================
+
+SearchRecentList
+└── Column
+    ├── RSectionHeading (title: 'Recent Searches', showActionButton: false)
+    ├── SizedBox (height: 12.0)
+    └── Wrap
+        └── [recentSearches: Gondal Road, Satellite, VIP Road]
+            └── GestureDetector (onTap: Get.to(PropertyListScreen))
+                └── Container
+                    └── Row
+                        ├── Icon (Icons.history)
+                        ├── SizedBox (width: 6.0)
+                        └── Text (item)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: SearchPopularGrid
+// FILE: lib/features/pg/screens/search/widgets/search_popular_grid.dart
+// ================================================================================
+
+SearchPopularGrid
+└── Column
+    ├── RSectionHeading (title: 'Popular Locations', buttonTitle: 'View all')
+    ├── SizedBox (height: 12.0)
+    └── GridView.builder (crossAxisCount: 2, childAspectRatio: 1.45)
+        └── [popularCities: Rajkot, Ahmedabad, Baroda, Surat]
+            └── GestureDetector (onTap: Get.to(PropertyListScreen))
+                └── ClipRRect (borderRadius: 16.0)
+                    └── Stack
+                        ├── Image.asset (city['image'])
+                        ├── Container (LinearGradient dark overlay)
+                        └── Positioned
+                            └── Text (city['name'])
+
+
+// ================================================================================
+// SEARCH RESULTS / PROPERTY LIST SCREEN
+// FILE: lib/features/pg/screens/search_results/property_list.dart
+// ================================================================================
+
+PropertyListScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: widget.searchQuery)
+    │   └── (trailing: IconButton(Icons.tune, onPressed: Get.to(FilterScreen)))
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── Text ('128 properties found in ${widget.searchQuery}')
+    │           ├── SizedBox (height: 10.0)
+    │           ├── SingleChildScrollView (scrollDirection: Axis.horizontal)
+    │           │   └── Row
+    │           │       └── [activeFilterTags map: Padding -> Container -> Text]
+    │           ├── SizedBox (height: 16.0)
+    │           ├── RPropertyCardVertical (Modern 2BHK Apartment)
+    │           ├── SizedBox (height: 16.0)
+    │           ├── RPropertyCardVertical (Cozy PG for Students)
+    │           ├── SizedBox (height: 16.0)
+    │           ├── RPropertyCardVertical (Elite Studio Loft)
+    │           └── SizedBox (height: 24.0)
+    └── RFloatingActionButton (floatingActionButton, heroTag: 'search_results_fab', onPressed: Get.to(PropertyMapScreen))
+
+
+// ================================================================================
+// FILTER SCREEN
+// FILE: lib/features/pg/screens/filter/filter.dart
+// ================================================================================
+
+FilterScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Filters')
+    │   └── (trailing: TextButton -> Text('Reset'))
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── FilterBudgetSlider
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           ├── FilterPropertyType
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           ├── FilterRoomType
+    │           ├── SizedBox (height: AppSizes.spaceBtwSections)
+    │           └── FilterAmenities
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── ElevatedButton (onPressed: Get.to(PropertyListScreen))
+                └── Text ('Show 128 Properties')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: FilterBudgetSlider
+// FILE: lib/features/pg/screens/filter/widgets/filter_budget_slider.dart
+// ================================================================================
+
+FilterBudgetSlider
+└── Column
+    ├── Text ('Budget')
+    ├── SizedBox (height: 12.0)
+    ├── Row
+    │   ├── Column
+    │   │   ├── Text ('Min Price')
+    │   │   ├── SizedBox (height: 4)
+    │   │   └── Text ('₹${_currentRangeValues.start.round()}')
+    │   ├── Container (Divider Line)
+    │   └── Column
+    │       ├── Text ('Max Price')
+    │       ├── SizedBox (height: 4)
+    │       └── Text ('₹${_currentRangeValues.end.round()}')
+    └── SliderTheme
+        └── RangeSlider (min: 1000, max: 50000, divisions: 50)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: FilterPropertyType
+// FILE: lib/features/pg/screens/filter/widgets/filter_property_type.dart
+// ================================================================================
+
+FilterPropertyType
+└── Column
+    ├── Text ('Property Type')
+    ├── SizedBox (height: 12.0)
+    ├── Wrap (spacing: 8.0, runSpacing: 8.0)
+    │   ├── RFilterChipPill (label: 'Flat')
+    │   ├── RFilterChipPill (label: 'PG')
+    │   ├── RFilterChipPill (label: 'Room')
+    │   ├── RFilterChipPill (label: 'Hostel')
+    │   └── RFilterChipPill (label: 'Villa')
+    ├── SizedBox (height: 24.0)
+    ├── Text ('Gender Preference')
+    ├── SizedBox (height: 12.0)
+    └── Row
+        ├── Expanded -> Padding -> GestureDetector -> Container -> Text ('Male')
+        ├── Expanded -> Padding -> GestureDetector -> Container -> Text ('Female')
+        └── Expanded -> Padding -> GestureDetector -> Container -> Text ('Any')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: FilterRoomType
+// FILE: lib/features/pg/screens/filter/widgets/filter_room_type.dart
+// ================================================================================
+
+FilterRoomType
+└── Column
+    ├── Text ('Room Type')
+    ├── SizedBox (height: 12.0)
+    └── GridView.builder (crossAxisCount: 2, childAspectRatio: 2.8)
+        └── [roomOptions: Private, Shared, 1BHK, 2BHK]
+            └── GestureDetector
+                └── Container
+                    └── Row
+                        ├── Icon (option['icon'])
+                        ├── SizedBox (width: 8)
+                        └── Text (option['title'])
+
+
+// ================================================================================
+// EXTRACTED WIDGET: FilterAmenities
+// FILE: lib/features/pg/screens/filter/widgets/filter_amenities.dart
+// ================================================================================
+
+FilterAmenities
+└── Column
+    ├── Text ('Amenities')
+    ├── SizedBox (height: 12.0)
+    ├── Wrap (spacing: 8.0, runSpacing: 8.0)
+    │   └── [amenities map: RFilterChipPill]
+    ├── SizedBox (height: 24.0)
+    ├── Text ('Availability')
+    ├── SizedBox (height: 12.0)
+    ├── GestureDetector (onTap: showDatePicker)
+    │   └── Container
+    │       └── Row
+    │           ├── Text ('${selectedDate.day}/${selectedDate.month}/${selectedDate.year}')
+    │           └── Icon (Icons.calendar_today_outlined)
+    ├── SizedBox (height: 24.0)
+    ├── Row
+    │   ├── Text ('Distance')
+    │   └── Text ('Up to ${distance.round()} km')
+    ├── SliderTheme
+    │   └── Slider (min: 1.0, max: 20.0)
+    └── Row
+        ├── Text ('1 km')
+        └── Text ('20 km')
+
+
+// ================================================================================
+// FEATURED PROPERTIES SCREEN
+// FILE: lib/features/pg/screens/featured/featured_properties.dart
+// ================================================================================
+
+FeaturedPropertiesScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Featured Properties'), Text('Handpicked homes...')])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── RPropertyCardVertical (Skyline Penthouse)
+                ├── SizedBox (height: 16.0)
+                ├── RPropertyCardVertical (Modern 2BHK Apartment)
+                ├── SizedBox (height: 16.0)
+                ├── RPropertyCardVertical (Luxury Glass Villa)
+                └── SizedBox (height: 32.0)
+
+
+// ================================================================================
+// NEARBY PROPERTIES SCREEN
+// FILE: lib/features/pg/screens/nearby/nearby_properties.dart
+// ================================================================================
+
+NearbyPropertiesScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true, titleText: 'Nearby You')
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── NearbyLocationBadge
+                ├── SizedBox (height: 18.0)
+                ├── NearbyPropertyTile (Skyline Heights)
+                ├── SizedBox (height: 12.0)
+                ├── NearbyPropertyTile (The Green Villa)
+                ├── SizedBox (height: 12.0)
+                ├── NearbyPropertyTile (Modern Studio)
+                ├── SizedBox (height: 12.0)
+                ├── NearbyPropertyTile (Royal Residency)
+                ├── SizedBox (height: 12.0)
+                ├── NearbyPropertyTile (The Penthouse)
+                └── SizedBox (height: 36.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: NearbyLocationBadge
+// FILE: lib/features/pg/screens/nearby/widgets/nearby_location_badge.dart
+// ================================================================================
+
+NearbyLocationBadge
+└── Column
+    ├── Container
+    │   └── Row
+    │       ├── Icon (Icons.location_on)
+    │       ├── SizedBox (width: 4.0)
+    │       └── Text ('Current Location • Rajkot')
+    ├── SizedBox (height: 8.0)
+    └── Text ('Properties within 5 km of your location')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: NearbyPropertyTile
+// FILE: lib/features/pg/screens/nearby/widgets/nearby_property_tile.dart
+// ================================================================================
+
+NearbyPropertyTile
+└── GestureDetector (onTap: Get.to(PropertyListScreen))
+    └── Container
+        └── Row
+            ├── Stack
+            │   ├── ClipRRect (borderRadius: 14.0)
+            │   │   └── Image.asset (image)
+            │   └── Positioned
+            │       └── Container
+            │           └── Row
+            │               ├── Icon (Icons.star)
+            │               ├── SizedBox (width: 2)
+            │               └── Text (rating)
+            ├── SizedBox (width: 14.0)
+            ├── Expanded
+            │   └── Column
+            │       ├── Text (title)
+            │       ├── SizedBox (height: 3.0)
+            │       ├── Text (distance)
+            │       ├── SizedBox (height: 3.0)
+            │       ├── Text (location)
+            │       ├── SizedBox (height: 6.0)
+            │       └── RichText (price /mo)
+            └── Icon (Icons.chevron_right)
+
+
+// ================================================================================
+// PROPERTY DETAILS SCREEN
+// FILE: lib/features/pg/screens/property_details/property_details.dart
+// ================================================================================
+
+PropertyDetailsScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Property Profile')
+    │   └── (action: [IconButton(share), IconButton(favorite), IconButton(logout)])
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── PropertyDetailHero
+    │           ├── SizedBox (height: 16.0)
+    │           ├── Row
+    │           │   ├── Expanded -> Text (widget.title)
+    │           │   └── Container -> Row -> [Icon(Icons.star), SizedBox, Text(widget.rating)]
+    │           ├── SizedBox (height: 4.0)
+    │           ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Text(widget.location)]
+    │           ├── SizedBox (height: 12.0)
+    │           ├── Row
+    │           │   ├── RichText (widget.price /month)
+    │           │   └── Container -> Text (widget.unitType)
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailSpecs
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Text ('Luminous Living')
+    │           ├── SizedBox (height: 6.0)
+    │           ├── RichText (Description + 'Read More')
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailAmenities
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailGalleryPreview
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailLocationCard
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailOwnerCard
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PropertyDetailReviewsPreview
+    │           └── SizedBox (height: 32.0)
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── Row
+                ├── Expanded
+                │   └── ElevatedButton (onPressed: Get.to(BookVisitScreen))
+                │       └── Text ('Book Visit')
+                ├── SizedBox (width: 12.0)
+                └── Expanded
+                    └── ElevatedButton (onPressed: Get.to(RentalRequestFormScreen))
+                        └── Text ('Request Rental')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailHero
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_hero.dart
+// ================================================================================
+
+PropertyDetailHero
+└── GestureDetector (onTap: Get.to(GalleryScreen))
+    └── Stack
+        ├── ClipRRect (borderRadius: 20.0)
+        │   └── Image.asset (widget.image)
+        ├── Positioned (top: 14.0, right: 14.0)
+        │   └── Container
+        │       └── Text (widget.status)
+        └── Positioned (bottom: 14.0, left: 14.0)
+            └── Container
+                └── Text (widget.countText)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailSpecs
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_specs.dart
+// ================================================================================
+
+PropertyDetailSpecs
+└── GridView.builder (crossAxisCount: 3, childAspectRatio: 1.35)
+    └── [specs: 2 Bedrooms, 2 Bathrooms, 1200 sq ft, Furnished, Parking, 4th Floor]
+        └── Container
+            └── Column
+                ├── Icon (spec['icon'])
+                ├── SizedBox (height: 6.0)
+                └── Text (spec['title'])
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailAmenities
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_amenities.dart
+// ================================================================================
+
+PropertyDetailAmenities
+└── Column
+    ├── Text ('Amenities')
+    ├── SizedBox (height: 10.0)
+    └── Wrap (spacing: 8.0, runSpacing: 8.0)
+        └── [amenities: WiFi, AC, Security, Gym]
+            └── Container
+                └── Row
+                    ├── Icon (item['icon'])
+                    ├── SizedBox (width: 6)
+                    └── Text (item['title'])
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailGalleryPreview
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_gallery_preview.dart
+// ================================================================================
+
+PropertyDetailGalleryPreview
+└── Column
+    ├── RSectionHeading (title: 'Gallery', buttonTitle: 'View All', onPressed: Get.to(GalleryScreen))
+    ├── SizedBox (height: 10.0)
+    └── SingleChildScrollView (scrollDirection: Axis.horizontal)
+        └── Row
+            └── [previews: Living Room, Kitchen, Bedroom]
+                └── Padding
+                    └── GestureDetector (onTap: Get.to(GalleryScreen))
+                        └── ClipRRect (borderRadius: 16.0)
+                            └── Image.asset (img)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailLocationCard
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_location_card.dart
+// ================================================================================
+
+PropertyDetailLocationCard
+└── Column
+    ├── Text ('Location')
+    ├── SizedBox (height: 10.0)
+    ├── GestureDetector (onTap: Get.to(PropertyMapScreen))
+    │   └── Container (height: 130)
+    │       └── Stack
+    │           ├── CustomPaint (painter: _MiniMapPainter)
+    │           └── Container (shape: BoxShape.circle)
+    │               └── Icon (Icons.home)
+    ├── SizedBox (height: 12.0)
+    ├── Container (Nearby: Metro Station)
+    │   └── Row
+    │       ├── Icon (Icons.train_outlined)
+    │       ├── SizedBox (width: 10)
+    │       ├── Expanded -> Text ('Metro Station')
+    │       └── Text ('500m')
+    ├── SizedBox (height: 8.0)
+    └── Container (Nearby: Civil Hospital)
+        └── Row
+            ├── Icon (Icons.local_hospital_outlined)
+            ├── SizedBox (width: 10)
+            ├── Expanded -> Text ('Civil Hospital')
+            └── Text ('1.2km')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailOwnerCard
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_owner_card.dart
+// ================================================================================
+
+PropertyDetailOwnerCard
+└── Container
+    └── Row
+        ├── GestureDetector (onTap: Get.to(OwnerProfileScreen))
+        │   └── CircleAvatar (AssetImage(image))
+        ├── SizedBox (width: 12.0)
+        ├── Expanded
+        │   └── GestureDetector (onTap: Get.to(OwnerProfileScreen))
+        │       └── Column
+        │           ├── Text (name)
+        │           └── Text (title)
+        ├── IconButton (onPressed: Get.to(ChatScreen))
+        │   └── Container
+        │       └── Icon (Icons.chat_bubble_outline)
+        └── IconButton
+            └── Container
+                └── Icon (Icons.phone_outlined)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PropertyDetailReviewsPreview
+// FILE: lib/features/pg/screens/property_details/widgets/property_detail_reviews_preview.dart
+// ================================================================================
+
+PropertyDetailReviewsPreview
+└── Column
+    ├── Row
+    │   ├── GestureDetector (onTap: Get.to(ReviewsScreen))
+    │   │   └── Text ('Reviews')
+    │   └── GestureDetector (onTap: Get.to(ReviewsScreen))
+    │       └── Row
+    │           ├── Icon (Icons.star)
+    │           ├── SizedBox (width: 4)
+    │           ├── Text ('4.8 (124)')
+    │           └── Icon (Icons.chevron_right)
+    ├── SizedBox (height: 10.0)
+    ├── Container (Review Item 1: Ananya Sharma)
+    │   └── Column
+    │       ├── Row
+    │       │   ├── Text ('Ananya Sharma')
+    │       │   └── Row (5 Stars)
+    │       ├── SizedBox (height: 4.0)
+    │       └── Text (comment)
+    ├── SizedBox (height: 10.0)
+    └── Container (Review Item 2: Rahul Verma)
+        └── Column
+            ├── Row
+            │   ├── Text ('Rahul Verma')
+            │   └── Row (5 Stars)
+            ├── SizedBox (height: 4.0)
+            └── Text (comment)
+
+
+// ================================================================================
+// GALLERY SCREEN
+// FILE: lib/features/pg/screens/gallery/gallery.dart
+// ================================================================================
+
+GalleryScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Gallery')
+    │   └── (action: [IconButton(share), IconButton(logout)])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── GalleryHeroImage
+                ├── SizedBox (height: 20.0)
+                ├── GalleryCategoryGrid (Living Room)
+                ├── SizedBox (height: 20.0)
+                ├── GalleryCategoryGrid (Bedroom)
+                ├── SizedBox (height: 20.0)
+                ├── GalleryViewAllCard (Kitchen & Bathroom)
+                └── SizedBox (height: 32.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: GalleryHeroImage
+// FILE: lib/features/pg/screens/gallery/widgets/gallery_hero_image.dart
+// ================================================================================
+
+GalleryHeroImage
+└── Stack
+    ├── ClipRRect (borderRadius: 20.0)
+    │   └── Image.asset (image)
+    └── Positioned
+        └── Container
+            └── Text (countText)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: GalleryCategoryGrid
+// FILE: lib/features/pg/screens/gallery/widgets/gallery_category_grid.dart
+// ================================================================================
+
+GalleryCategoryGrid
+└── Column
+    ├── Text (title)
+    ├── SizedBox (height: 10.0)
+    └── Row
+        ├── Expanded -> ClipRRect (borderRadius: 16.0) -> Image.asset (image1)
+        ├── SizedBox (width: 12.0)
+        └── Expanded -> ClipRRect (borderRadius: 16.0) -> Image.asset (image2)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: GalleryViewAllCard
+// FILE: lib/features/pg/screens/gallery/widgets/gallery_view_all_card.dart
+// ================================================================================
+
+GalleryViewAllCard
+└── Column
+    ├── Text ('Kitchen & Bathroom')
+    ├── SizedBox (height: 10.0)
+    └── Row
+        ├── Expanded -> ClipRRect (borderRadius: 16.0) -> Image.asset (image)
+        ├── SizedBox (width: 12.0)
+        └── Expanded
+            └── GestureDetector (onTap: onTap)
+                └── Container
+                    └── Column
+                        ├── Container
+                        │   └── Icon (Icons.arrow_forward_rounded)
+                        ├── SizedBox (height: 8)
+                        └── Text ('View All Photos')
+
+
+// ================================================================================
+// PROPERTY MAP SCREEN
+// FILE: lib/features/pg/screens/map_view/property_map.dart
+// ================================================================================
+
+PropertyMapScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: widget.locationName)
+    │   └── (trailing: IconButton(Icons.tune, onPressed: Get.to(FilterScreen)))
+    ├── Stack (body)
+    │   ├── CustomPaint (painter: MapBackgroundPainter, size: Size.infinite)
+    │   ├── [mapPins: Positioned -> GestureDetector -> AnimatedContainer -> Text(pin['price'])]
+    │   └── Positioned (bottom: 24.0, left: 16.0, right: 16.0)
+    │       └── RPropertyCardHorizontal (Modern 2BHK Apartment, showViewButton: true, onTap: Get.back)
+    └── Padding (floatingActionButton, bottom: 110.0)
+        └── FloatingActionButton (onPressed: Get.back)
+            └── Icon (Icons.list_alt_rounded)
+
+
+// ================================================================================
+// BOOK VISIT SCREEN
+// FILE: lib/features/pg/screens/book_visit/book_visit.dart
+// ================================================================================
+
+BookVisitScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true, titleText: 'Book Visit')
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── BookVisitPropertyCard
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Text ('Select Date')
+    │           ├── SizedBox (height: 10.0)
+    │           ├── BookVisitCalendar
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Text ('Select Time')
+    │           ├── SizedBox (height: 10.0)
+    │           ├── BookVisitTimeSelector
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Text ('Your Details')
+    │           ├── SizedBox (height: 10.0)
+    │           ├── BookVisitDetailsForm
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Text ('Visit Purpose')
+    │           ├── SizedBox (height: 10.0)
+    │           ├── BookVisitPurposeChips
+    │           ├── SizedBox (height: 18.0)
+    │           ├── BookVisitPolicyCard
+    │           └── SizedBox (height: 24.0)
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── Column
+                ├── Row
+                │   ├── Text ('Total Cost')
+                │   └── Text ('Free Visit')
+                ├── SizedBox (height: 12.0)
+                └── SizedBox (width: double.infinity)
+                    └── ElevatedButton (onPressed: confirmVisit)
+                        └── Text ('Confirm Visit')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitPropertyCard
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_property_card.dart
+// ================================================================================
+
+BookVisitPropertyCard
+└── Container
+    └── Row
+        ├── ClipRRect (borderRadius: 12.0)
+        │   └── Image.asset (image)
+        ├── SizedBox (width: 14.0)
+        └── Expanded
+            └── Column
+                ├── Text (title)
+                ├── SizedBox (height: 4.0)
+                ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+                ├── SizedBox (height: 6.0)
+                └── Text ('$price/mo')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitCalendar
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_calendar.dart
+// ================================================================================
+
+BookVisitCalendar
+└── Container
+    └── Column
+        ├── Row (Month Header)
+        │   ├── Text ('October 2023')
+        │   └── Row -> [IconButton(chevron_left), SizedBox, IconButton(chevron_right)]
+        ├── SizedBox (height: 12.0)
+        ├── Row (Weekday Labels: S, M, T, W, T, F, S)
+        │   └── [weekdays map: SizedBox -> Text]
+        ├── SizedBox (height: 8.0)
+        ├── Row (Calendar Dates Row 1)
+        │   └── [row1 map: GestureDetector -> Container -> Text]
+        ├── SizedBox (height: 6.0)
+        └── Row (Calendar Dates Row 2)
+            └── [row2 map: GestureDetector -> Container -> Text]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitTimeSelector
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_time_selector.dart
+// ================================================================================
+
+BookVisitTimeSelector
+└── Row
+    └── [times map: 10:00 AM, 11:30 AM, 1:00 PM]
+        └── Expanded
+            └── Padding
+                └── GestureDetector
+                    └── Container
+                        └── Text (time)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitDetailsForm
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_details_form.dart
+// ================================================================================
+
+BookVisitDetailsForm
+└── Column
+    ├── TextField (hintText: 'Full Name')
+    ├── SizedBox (height: 10.0)
+    ├── TextField (hintText: 'Phone Number', keyboardType: TextInputType.phone)
+    ├── SizedBox (height: 10.0)
+    └── TextField (hintText: 'Email Address', keyboardType: TextInputType.emailAddress)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitPurposeChips
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_purpose_chips.dart
+// ================================================================================
+
+BookVisitPurposeChips
+└── Column
+    ├── Wrap (spacing: 8.0, runSpacing: 8.0)
+    │   └── [purposes map: View Property, Finalize Rental, Meet Owner, Other]
+    │       └── GestureDetector
+    │           └── Container
+    │               └── Text (purpose)
+    ├── SizedBox (height: 12.0)
+    └── TextField (maxLines: 3, hintText: 'Add any special request...')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: BookVisitPolicyCard
+// FILE: lib/features/pg/screens/book_visit/widgets/book_visit_policy_card.dart
+// ================================================================================
+
+BookVisitPolicyCard
+└── Container
+    └── Column
+        ├── Row (Visit Instructions)
+        │   ├── Icon (Icons.info_outline)
+        │   ├── SizedBox (width: 10)
+        │   └── Expanded -> Column -> [Text('Visit Instructions'), SizedBox, Text]
+        ├── SizedBox (height: 12.0)
+        └── Row (Cancellation Policy)
+            ├── Icon (Icons.cancel_outlined)
+            ├── SizedBox (width: 10)
+            └── Expanded -> Column -> [Text('Cancellation Policy'), SizedBox, Text]
+
+
+// ================================================================================
+// RENTAL REQUEST FORM SCREEN
+// FILE: lib/features/pg/screens/rental_request/rental_request_form.dart
+// ================================================================================
+
+RentalRequestFormScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true, titleText: 'Rental Request')
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── RentalPropertyHeader
+                ├── SizedBox (height: 18.0)
+                ├── RentalFormFields
+                ├── SizedBox (height: 18.0)
+                ├── RentalFinancialSummary
+                ├── SizedBox (height: 16.0)
+                ├── GestureDetector (Terms Checkbox)
+                │   └── Row
+                │       ├── Container (Circle Checkbox)
+                │       │   └── [Condition: isAgreed ? Icon(Icons.check) : null]
+                │       ├── SizedBox (width: 10)
+                │       └── Expanded -> RichText (Terms & Conditions, Privacy Policy)
+                ├── SizedBox (height: 24.0)
+                ├── SizedBox (width: double.infinity)
+                │   └── ElevatedButton (onPressed: isAgreed -> Get.to(ReviewRentalRequestScreen))
+                │       └── Text ('Send Request')
+                ├── SizedBox (height: 10.0)
+                ├── Center
+                │   └── TextButton (onPressed: Get.back)
+                │       └── Text ('Cancel')
+                └── SizedBox (height: 24.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalPropertyHeader
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_property_header.dart
+// ================================================================================
+
+RentalPropertyHeader
+└── Container
+    └── Row
+        ├── ClipRRect (borderRadius: 14.0)
+        │   └── Image.asset (image)
+        ├── SizedBox (width: 14.0)
+        └── Expanded
+            └── Column
+                ├── Text (title)
+                ├── SizedBox (height: 3.0)
+                ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+                ├── SizedBox (height: 4.0)
+                └── Text (price)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalFormFields
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_form_fields.dart
+// ================================================================================
+
+RentalFormFields
+└── Column
+    ├── Column (_buildInputField: Full Name)
+    │   ├── Text ('Full Name')
+    │   ├── SizedBox (height: 6.0)
+    │   └── TextFormField (initialValue: 'John Doe')
+    ├── SizedBox (height: 12.0)
+    ├── Column (_buildInputField: Mobile Number)
+    │   ├── Text ('Mobile Number')
+    │   ├── SizedBox (height: 6.0)
+    │   └── TextFormField (initialValue: '+91 98765 43210')
+    ├── SizedBox (height: 12.0)
+    ├── Column (_buildInputField: Email Address)
+    │   ├── Text ('Email Address')
+    │   ├── SizedBox (height: 6.0)
+    │   └── TextFormField (initialValue: 'john.doe@example.com')
+    ├── SizedBox (height: 12.0)
+    ├── Text ('Preferred Move-in Date')
+    ├── SizedBox (height: 6.0)
+    ├── Container
+    │   └── Row
+    │       ├── Text ('Select Date')
+    │       └── Icon (Icons.calendar_today_outlined)
+    ├── SizedBox (height: 12.0)
+    ├── Row
+    │   ├── Expanded -> Column -> [Text('Rental Duration'), SizedBox, Container -> Row -> [Text('11 Months'), Icon(Icons.keyboard_arrow_down)]]
+    │   ├── SizedBox (width: 12.0)
+    │   └── Expanded -> Column -> [Text('Occupants'), SizedBox, Container -> Row -> [Text('1 Person'), Icon(Icons.keyboard_arrow_down)]]
+    ├── SizedBox (height: 12.0)
+    ├── Text ('Message to Owner')
+    ├── SizedBox (height: 6.0)
+    └── TextField (maxLines: 4, hintText: 'Tell the owner a bit about yourself...')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalFinancialSummary
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_financial_summary.dart
+// ================================================================================
+
+RentalFinancialSummary
+└── Container
+    └── Column
+        ├── Text ('FINANCIAL SUMMARY')
+        ├── SizedBox (height: 12.0)
+        ├── Row (_buildRow: Security Deposit) -> [Text, Text]
+        ├── SizedBox (height: 8.0)
+        ├── Row (_buildRow: Monthly Rent) -> [Text, Text]
+        ├── SizedBox (height: 10.0)
+        ├── Divider
+        ├── SizedBox (height: 10.0)
+        └── Row (_buildRow: Agreement Duration) -> [Text, Text]
+
+
+// ================================================================================
+// REVIEW RENTAL REQUEST SCREEN
+// FILE: lib/features/pg/screens/rental_request/review_rental_request.dart
+// ================================================================================
+
+ReviewRentalRequestScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Review Rental Request'), Text('Check your request details...')])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── RentalRequestPropertyCard
+                ├── SizedBox (height: 18.0)
+                ├── RentalRequestApplicantCard
+                ├── SizedBox (height: 20.0)
+                ├── Text ('Review Sections')
+                ├── SizedBox (height: 10.0)
+                ├── RentalRequestSectionsList
+                ├── SizedBox (height: 18.0)
+                ├── GestureDetector (Confirmation Checkbox)
+                │   └── Row
+                │       ├── Container (Circle Checkbox)
+                │       │   └── [Condition: isConfirmed ? Icon(Icons.check) : null]
+                │       ├── SizedBox (width: 10)
+                │       └── Expanded -> Text ('I confirm all details are correct...')
+                ├── SizedBox (height: 24.0)
+                ├── SizedBox (width: double.infinity)
+                │   └── ElevatedButton (onPressed: isConfirmed -> submit)
+                │       └── Text ('Submit Rental Request')
+                ├── SizedBox (height: 10.0)
+                ├── SizedBox (width: double.infinity)
+                │   └── OutlinedButton (onPressed: Get.back)
+                │       └── Text ('Edit Details')
+                └── SizedBox (height: 32.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalRequestPropertyCard
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_request_property_card.dart
+// ================================================================================
+
+RentalRequestPropertyCard
+└── Container
+    └── Column
+        ├── Row
+        │   ├── ClipRRect (borderRadius: 12.0)
+        │   │   └── Image.asset (image)
+        │   ├── SizedBox (width: 14.0)
+        │   └── Expanded
+        │       └── Column
+        │           ├── Row
+        │           │   ├── Expanded -> Text (title)
+        │           │   └── Row -> [Icon(Icons.star), SizedBox, Text(rating)]
+        │           ├── SizedBox (height: 2.0)
+        │           ├── Text (location)
+        │           ├── SizedBox (height: 6.0)
+        │           └── Row
+        │               ├── Text (price)
+        │               └── Container -> Text (unitType)
+        ├── SizedBox (height: 12.0)
+        ├── Divider
+        ├── SizedBox (height: 10.0)
+        └── Row
+            ├── Row
+            │   ├── CircleAvatar (owner initial)
+            │   ├── SizedBox (width: 8)
+            │   └── Text ('Owned by $ownerName')
+            └── GestureDetector (onTap: Get.to(PropertyListScreen))
+                └── Text ('View Property')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalRequestApplicantCard
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_request_applicant_card.dart
+// ================================================================================
+
+RentalRequestApplicantCard
+└── Container
+    └── Column
+        ├── Row (Applicant Header)
+        │   ├── CircleAvatar (AssetImage(images.userProfileImage))
+        │   ├── SizedBox (width: 14.0)
+        │   └── Column -> [Text('John Doe'), Text('Individual Applicant')]
+        ├── SizedBox (height: 16.0)
+        ├── Divider
+        ├── SizedBox (height: 14.0)
+        ├── Row
+        │   ├── Column (_buildDetailItem: MOVE-IN DATE) -> [Text, SizedBox, Text]
+        │   └── Column (_buildDetailItem: DURATION) -> [Text, SizedBox, Text]
+        ├── SizedBox (height: 14.0)
+        ├── Row
+        │   ├── Column (_buildDetailItem: OCCUPANTS) -> [Text, SizedBox, Text]
+        │   └── Column (_buildDetailItem: CONTACT) -> [Text, SizedBox, Text]
+        ├── SizedBox (height: 14.0)
+        ├── Text ('PERSONAL MESSAGE')
+        ├── SizedBox (height: 6.0)
+        └── Container
+            └── Text ('"Hi Sarah, I\'m a software engineer..."')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RentalRequestSectionsList
+// FILE: lib/features/pg/screens/rental_request/widgets/rental_request_sections_list.dart
+// ================================================================================
+
+RentalRequestSectionsList
+└── Column
+    ├── Container (_buildSectionItem: Personal Information)
+    │   └── Row -> [Container -> Icon(Icons.person_outline), SizedBox, Expanded -> Text('Personal Information'), IconButton -> Icon(Icons.edit_outlined)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionItem: Rental Preferences)
+    │   └── Row -> [Container -> Icon(Icons.tune), SizedBox, Expanded -> Text('Rental Preferences'), IconButton -> Icon(Icons.edit_outlined)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionItem: Documents)
+    │   └── Row -> [Container -> Icon(Icons.description_outlined), SizedBox, Expanded -> Text('Documents'), IconButton -> Icon(Icons.edit_outlined)]
+    ├── SizedBox (height: 10.0)
+    └── Container (_buildSectionItem: Payment Details)
+        └── Row -> [Container -> Icon(Icons.payment_outlined), SizedBox, Expanded -> Text('Payment Details'), IconButton -> Icon(Icons.edit_outlined)]
+
+
+// ================================================================================
+// RENT AGREEMENT SCREEN
+// FILE: lib/features/pg/screens/rent_agreement/rent_agreement.dart
+// ================================================================================
+
+RentAgreementScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Sign Rent Agreement'), Text('Review and sign your rental agreement')])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── AgreementIdCard
+                ├── SizedBox (height: 16.0)
+                ├── AgreementPropertyCard
+                ├── SizedBox (height: 18.0)
+                ├── AgreementSectionsList
+                ├── SizedBox (height: 20.0)
+                ├── AgreementSignatureBox
+                ├── SizedBox (height: 24.0)
+                ├── SizedBox (width: double.infinity)
+                │   └── ElevatedButton (onPressed: signAgreement)
+                │       └── Text ('Sign & Finalize Agreement')
+                └── SizedBox (height: 32.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AgreementIdCard
+// FILE: lib/features/pg/screens/rent_agreement/widgets/agreement_id_card.dart
+// ================================================================================
+
+AgreementIdCard
+└── Container
+    └── Column
+        ├── Row
+        │   ├── Column -> [Text('AGREEMENT ID'), SizedBox, Text(agreementId)]
+        │   └── Container -> Text (status)
+        ├── SizedBox (height: 14.0)
+        ├── Divider
+        ├── SizedBox (height: 12.0)
+        └── Row
+            ├── Column (_buildDateItem: Created) -> [Text, SizedBox, Text]
+            ├── Column (_buildDateItem: Effective) -> [Text, SizedBox, Text]
+            └── Column (_buildDateItem: Expiry) -> [Text, SizedBox, Text]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AgreementPropertyCard
+// FILE: lib/features/pg/screens/rent_agreement/widgets/agreement_property_card.dart
+// ================================================================================
+
+AgreementPropertyCard
+└── Container
+    └── Column
+        ├── ClipRRect (borderRadius: only(topLeft: 16.0, topRight: 16.0))
+        │   └── Image.asset (image)
+        └── Padding
+            └── Column
+                ├── Text (title)
+                ├── SizedBox (height: 3.0)
+                ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+                ├── SizedBox (height: 12.0)
+                ├── Row (Stat Boxes)
+                │   ├── Expanded -> Container (_buildStatBox: Monthly Rent) -> Column -> [Text, SizedBox, Text]
+                │   ├── SizedBox (width: 10)
+                │   └── Expanded -> Container (_buildStatBox: Security Deposit) -> Column -> [Text, SizedBox, Text]
+                ├── SizedBox (height: 12.0)
+                ├── Divider
+                ├── SizedBox (height: 10.0)
+                └── Row
+                    ├── Row -> [Icon(Icons.access_time), SizedBox, Text('$duration Duration')]
+                    └── Row -> [Icon(Icons.person_outline), SizedBox, Text('Owner: $ownerName')]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AgreementSectionsList
+// FILE: lib/features/pg/screens/rent_agreement/widgets/agreement_sections_list.dart
+// ================================================================================
+
+AgreementSectionsList
+└── Column
+    ├── Container (_buildSectionTile: Tenant Information)
+    │   └── Row -> [Container -> Icon(Icons.person_outline), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionTile: Owner Information)
+    │   └── Row -> [Container -> Icon(Icons.shield_outlined), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionTile: Terms & Conditions)
+    │   └── Row -> [Container -> Icon(Icons.gavel_outlined), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionTile: Payment Schedule)
+    │   └── Row -> [Container -> Icon(Icons.calendar_today_outlined), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+    ├── SizedBox (height: 10.0)
+    ├── Container (_buildSectionTile: Maintenance)
+    │   └── Row -> [Container -> Icon(Icons.build_outlined), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+    ├── SizedBox (height: 10.0)
+    └── Container (_buildSectionTile: House Rules)
+        └── Row -> [Container -> Icon(Icons.home_work_outlined), SizedBox, Expanded -> Column -> [Text, Text], Icon(Icons.chevron_right)]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: AgreementSignatureBox
+// FILE: lib/features/pg/screens/rent_agreement/widgets/agreement_signature_box.dart
+// ================================================================================
+
+AgreementSignatureBox
+└── Column
+    ├── Row
+    │   ├── Text ('Digital Signature')
+    │   └── GestureDetector (onTap: clearSignature)
+    │       └── Text ('Clear Signature')
+    ├── SizedBox (height: 10.0)
+    ├── GestureDetector (onTap: sign)
+    │   └── Container (Signature Canvas Box)
+    │       └── [Condition: hasSigned]
+    │           ├── Center -> Text ('John Doe', cursive)
+    │           [Condition: else]
+    │           └── Column -> [Icon(Icons.draw_outlined), SizedBox, Text('Draw Your Signature')]
+    ├── SizedBox (height: 14.0)
+    ├── GestureDetector (_buildCheckboxRow 1)
+    │   └── Row
+    │       ├── Container (Checkbox)
+    │       │   └── [Condition: agreeTerms ? Icon(Icons.check) : null]
+    │       ├── SizedBox (width: 10)
+    │       └── Expanded -> Text ('I have read and agree to the Terms & Conditions.')
+    ├── SizedBox (height: 8.0)
+    └── GestureDetector (_buildCheckboxRow 2)
+        └── Row
+            ├── Container (Checkbox)
+            │   └── [Condition: agreeLegal ? Icon(Icons.check) : null]
+            ├── SizedBox (width: 10)
+            └── Expanded -> Text ('I confirm the information provided is accurate and represent legal commitment.')
+
+
+// ================================================================================
+// PAY RENT SCREEN
+// FILE: lib/features/pg/screens/rent_pay/pay_rent.dart
+// ================================================================================
+
+PayRentScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Pay Rent'), Text('Secure and hassle-free rent payment')])
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── PayRentBillDetails
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PayRentMethods
+    │           ├── SizedBox (height: 18.0)
+    │           ├── PayRentPromoCode
+    │           ├── SizedBox (height: 18.0)
+    │           ├── Row (_buildFeeRow: Transaction fee) -> [Text, Text]
+    │           ├── SizedBox (height: 6.0)
+    │           ├── Row (_buildFeeRow: GST / Taxes) -> [Text, Text]
+    │           ├── SizedBox (height: 12.0)
+    │           ├── Divider
+    │           ├── SizedBox (height: 10.0)
+    │           ├── Row (Final Payable Amount)
+    │           │   ├── Text ('Final Payable Amount')
+    │           │   └── Text (totalPayable)
+    │           ├── SizedBox (height: 14.0)
+    │           ├── Container (Security Guarantee)
+    │           │   └── Row
+    │           │       ├── Icon (Icons.verified_user_outlined)
+    │           │       ├── SizedBox (width: 10)
+    │           │       └── Expanded -> Text ('Your payment is protected with end-to-end encryption.')
+    │           └── SizedBox (height: 32.0)
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── Row
+                ├── Column
+                │   ├── Text ('Total Payable')
+                │   └── Text (totalPayable)
+                └── ElevatedButton (onPressed: payNow)
+                    └── Text ('Pay Now')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PayRentBillDetails
+// FILE: lib/features/pg/screens/rent_pay/widgets/pay_rent_bill_details.dart
+// ================================================================================
+
+PayRentBillDetails
+└── Container
+    └── Column
+        ├── Text ('BILL DETAILS')
+        ├── SizedBox (height: 12.0)
+        ├── Row (_buildRow: Monthly Rent) -> [Text, Text]
+        ├── SizedBox (height: 8.0)
+        ├── Row (_buildRow: Maintenance) -> [Text, Text]
+        ├── SizedBox (height: 8.0)
+        ├── Row (_buildRow: Security Deposit) -> [Text, Text]
+        ├── SizedBox (height: 8.0)
+        ├── Row (_buildRow: Discount) -> [Text, Text]
+        ├── SizedBox (height: 12.0)
+        ├── Divider
+        ├── SizedBox (height: 10.0)
+        └── Row (Subtotal)
+            ├── Text ('Subtotal')
+            └── Text (subtotal)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PayRentMethods
+// FILE: lib/features/pg/screens/rent_pay/widgets/pay_rent_methods.dart
+// ================================================================================
+
+PayRentMethods
+└── Column
+    ├── Text ('Payment Method')
+    ├── SizedBox (height: 10.0)
+    ├── GestureDetector (_buildMethodTile: UPI)
+    │   └── Container
+    │       └── Row
+    │           ├── Container (Radio Outer Circle)
+    │           │   └── [Condition: isSelected ? Center(Container(Inner Circle)) : null]
+    │           ├── SizedBox (width: 14)
+    │           ├── Container -> Icon(Icons.account_balance_wallet_outlined)
+    │           ├── SizedBox (width: 12)
+    │           └── Expanded -> Column -> [Text('UPI'), Text('Google Pay, PhonePe, BHIM')]
+    ├── SizedBox (height: 10.0)
+    ├── GestureDetector (_buildMethodTile: Credit Card)
+    │   └── Container -> Row -> [Radio Circle, SizedBox, Container -> Icon(Icons.credit_card_outlined), SizedBox, Expanded -> Column -> [Text('Credit Card'), Text]]
+    ├── SizedBox (height: 10.0)
+    └── GestureDetector (_buildMethodTile: Net Banking)
+        └── Container -> Row -> [Radio Circle, SizedBox, Container -> Icon(Icons.account_balance_outlined), SizedBox, Expanded -> Column -> [Text('Net Banking'), Text]]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: PayRentPromoCode
+// FILE: lib/features/pg/screens/rent_pay/widgets/pay_rent_promo_code.dart
+// ================================================================================
+
+PayRentPromoCode
+└── Column
+    ├── Text ('PROMO CODE')
+    ├── SizedBox (height: 8.0)
+    └── Container
+        └── Row
+            ├── SizedBox (width: 12)
+            ├── Expanded
+            │   └── TextField (controller: _codeController, hintText: 'Enter coupon code')
+            └── ElevatedButton (onPressed: apply)
+                └── Text ('Apply')
+
+
+// ================================================================================
+// REVIEWS SCREEN
+// FILE: lib/features/pg/screens/reviews/reviews_screen.dart
+// ================================================================================
+
+ReviewsScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Reviews')
+    │   └── (action: [IconButton(share), IconButton(logout)])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── ReviewPropertyHeader
+                ├── SizedBox (height: 16.0)
+                ├── ReviewRatingSummary
+                ├── SizedBox (height: 16.0)
+                ├── SingleChildScrollView (scrollDirection: Axis.horizontal)
+                │   └── Row
+                │       ├── Padding -> GestureDetector -> Container -> Text ('All')
+                │       ├── Padding -> GestureDetector -> Container -> Text ('Latest')
+                │       ├── Padding -> GestureDetector -> Container -> Text ('Highest Rating')
+                │       └── Padding -> GestureDetector -> Container -> Text ('Lowest Rating')
+                ├── SizedBox (height: 16.0)
+                ├── ReviewCard (Anish Sharma)
+                ├── SizedBox (height: 12.0)
+                ├── ReviewCard (Megha Varma)
+                ├── SizedBox (height: 12.0)
+                ├── ReviewCard (Karan Mehta)
+                ├── SizedBox (height: 12.0)
+                ├── ReviewCard (Priya Singh)
+                └── SizedBox (height: 32.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ReviewPropertyHeader
+// FILE: lib/features/pg/screens/reviews/widgets/review_property_header.dart
+// ================================================================================
+
+ReviewPropertyHeader
+└── Container
+    └── Row
+        ├── ClipRRect (borderRadius: 12.0)
+        │   └── Image.asset (image)
+        ├── SizedBox (width: 14.0)
+        └── Expanded
+            └── Column
+                ├── Text (title)
+                ├── SizedBox (height: 4.0)
+                └── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ReviewRatingSummary
+// FILE: lib/features/pg/screens/reviews/widgets/review_rating_summary.dart
+// ================================================================================
+
+ReviewRatingSummary
+└── Container
+    └── Row
+        ├── Container (Rating Box)
+        │   └── Column
+        │       ├── Row -> [Text(rating), SizedBox, Icon(Icons.star)]
+        │       ├── SizedBox (height: 2)
+        │       └── Text ('$reviewCount Reviews')
+        ├── SizedBox (width: 16.0)
+        └── Expanded (Breakdown Bars)
+            └── Column
+                ├── Row (_buildStarRow: 5) -> [Text('5'), SizedBox, Expanded -> ClipRRect -> LinearProgressIndicator]
+                ├── SizedBox (height: 4)
+                ├── Row (_buildStarRow: 4) -> [Text('4'), SizedBox, Expanded -> ClipRRect -> LinearProgressIndicator]
+                ├── SizedBox (height: 4)
+                ├── Row (_buildStarRow: 3) -> [Text('3'), SizedBox, Expanded -> ClipRRect -> LinearProgressIndicator]
+                ├── SizedBox (height: 4)
+                ├── Row (_buildStarRow: 2) -> [Text('2'), SizedBox, Expanded -> ClipRRect -> LinearProgressIndicator]
+                ├── SizedBox (height: 4)
+                └── Row (_buildStarRow: 1) -> [Text('1'), SizedBox, Expanded -> ClipRRect -> LinearProgressIndicator]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ReviewCard
+// FILE: lib/features/pg/screens/reviews/widgets/review_card.dart
+// ================================================================================
+
+ReviewCard
+└── Container
+    └── Column
+        ├── Row (Header: Avatar, Name & Stars)
+        │   ├── CircleAvatar (name initial)
+        │   ├── SizedBox (width: 10)
+        │   ├── Expanded -> Column -> [Text(widget.name), Text(widget.timeAgo)]
+        │   └── Row -> [1..widget.rating: Icon(Icons.star)]
+        ├── SizedBox (height: 10.0)
+        ├── Text (widget.comment)
+        ├── [Condition: if (widget.attachedImage != null)]
+        │   └── ClipRRect (borderRadius: 12.0)
+        │       └── Image.asset (widget.attachedImage!)
+        ├── SizedBox (height: 10.0)
+        └── Row (Footer)
+            ├── GestureDetector (onTap: like)
+            │   └── Row
+            │       ├── Icon (isLiked ? Icons.thumb_up : Icons.thumb_up_alt_outlined)
+            │       ├── SizedBox (width: 4)
+            │       └── Text ('Helpful ($likes)')
+            └── IconButton (icon: Icon(Icons.more_vert))
+
+
+// ================================================================================
+// WISHLIST SCREEN
+// FILE: lib/features/pg/screens/wishlist/wishlist.dart
+// ================================================================================
+
+WishlistScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Wishlist'), Text('Your saved properties')])
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── WishlistCard (Skyline Modern Studio)
+    │           ├── SizedBox (height: 16.0)
+    │           ├── WishlistCard (Luxury Zen Apartment)
+    │           ├── SizedBox (height: 16.0)
+    │           ├── WishlistCard (Urban Loft Studio)
+    │           └── SizedBox (height: 32.0)
+    └── RFloatingActionButton (floatingActionButton, heroTag: 'wishlist_fab')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: WishlistCard
+// FILE: lib/features/pg/screens/wishlist/widgets/wishlist_card.dart
+// ================================================================================
+
+WishlistCard
+└── Container
+    └── Column
+        ├── Stack (Image Header)
+        │   ├── ClipRRect (borderRadius: only(topLeft: 16.0, topRight: 16.0))
+        │   │   └── Image.asset (widget.image)
+        │   ├── Positioned (Rating Pill)
+        │   │   └── Container
+        │   │       └── Row -> [Icon(Icons.star), SizedBox, Text('${widget.rating} (${widget.reviewCount})')]
+        │   └── Positioned (Favorite Button)
+        │       └── GestureDetector (onTap: toggleFavorite)
+        │           └── Container
+        │               └── Icon (isFavorite ? Icons.favorite : Icons.favorite_border)
+        └── Padding
+            └── Column
+                ├── Text (widget.title)
+                ├── SizedBox (height: 6.0)
+                ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Text(widget.location)]
+                ├── SizedBox (height: 10.0)
+                ├── Wrap (tags)
+                │   └── [widget.tags map: Container -> Text]
+                ├── SizedBox (height: 12.0)
+                └── Row
+                    ├── RichText (widget.price /mo)
+                    └── GestureDetector (onTap: onViewDetailsTap ?? Get.to(PropertyDetailsScreen))
+                        └── Container
+                            └── Text ('View Details')
+
+
+// ================================================================================
+// FIND ROOMMATE SCREEN
+// FILE: lib/features/pg/screens/roommate/find_roommate.dart
+// ================================================================================
+
+FindRoommateScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Find Roommate'), Text('Find your perfect roommate match')])
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── RoommateFilterCard
+    │           ├── SizedBox (height: 20.0)
+    │           ├── RoommateRecommendedSection
+    │           ├── SizedBox (height: 20.0)
+    │           ├── Text ('Top Matches')
+    │           ├── SizedBox (height: 12.0)
+    │           ├── RoommateMatchCard (Mahek, 19)
+    │           ├── SizedBox (height: 14.0)
+    │           ├── RoommateMatchCard (Dhara, 19)
+    │           └── SizedBox (height: 32.0)
+    └── RFloatingActionButton (floatingActionButton, heroTag: 'roommate_fab')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RoommateFilterCard
+// FILE: lib/features/pg/screens/roommate/widgets/roommate_filter_card.dart
+// ================================================================================
+
+RoommateFilterCard
+└── Container
+    └── Column
+        ├── TextField (Location, prefixIcon: Icon(Icons.location_on_outlined))
+        ├── SizedBox (height: 12.0)
+        ├── Row (Budget & Gender)
+        │   ├── Expanded -> Container -> Row -> [Icon(Icons.account_balance_wallet_outlined), SizedBox, Expanded -> Text(selectedBudget)]
+        │   ├── SizedBox (width: 10)
+        │   └── Expanded -> Container -> Row -> [Text(selectedGender), Icon(Icons.keyboard_arrow_down)]
+        ├── SizedBox (height: 14.0)
+        └── SizedBox (width: double.infinity)
+            └── ElevatedButton (Apply Filters)
+                └── Text ('Apply Filters')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RoommateRecommendedSection
+// FILE: lib/features/pg/screens/roommate/widgets/roommate_recommended_section.dart
+// ================================================================================
+
+RoommateRecommendedSection
+└── Column
+    ├── RSectionHeading (title: 'Recommended for You', buttonTitle: 'See all')
+    ├── SizedBox (height: 12.0)
+    └── SingleChildScrollView (scrollDirection: Axis.horizontal)
+        └── Row
+            └── [recommended: Rohan, Priya, Rahul]
+                └── Container
+                    └── Column
+                        ├── Stack
+                        │   ├── ClipRRect (borderRadius: only(topLeft: 16.0, topRight: 16.0))
+                        │   │   └── Image.asset (item['image']!)
+                        │   └── Positioned
+                        │       └── Container
+                        │           └── Text (item['match']!)
+                        └── Padding
+                            └── Column
+                                ├── Text (item['name']!)
+                                ├── SizedBox (height: 2.0)
+                                └── Text (item['profession']!)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RoommateMatchCard
+// FILE: lib/features/pg/screens/roommate/widgets/roommate_match_card.dart
+// ================================================================================
+
+RoommateMatchCard
+└── Container
+    └── Column
+        ├── Row (Avatar + Info + Compatibility)
+        │   ├── Stack
+        │   │   ├── CircleAvatar (AssetImage(image))
+        │   │   └── Positioned
+        │   │       └── Container (Online Status Dot)
+        │   ├── SizedBox (width: 12.0)
+        │   ├── Expanded
+        │   │   └── Column
+        │   │       ├── Text (name)
+        │   │       ├── Text (profession)
+        │   │       ├── SizedBox (height: 2.0)
+        │   │       ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Text(location)]
+        │   │       ├── SizedBox (height: 2.0)
+        │   │       └── Row -> [Icon(Icons.account_balance_wallet_outlined), SizedBox, Text('Budget: $budget')]
+        │   └── Container (Compatibility Badge)
+        │       └── Text ('✦ $compatibility')
+        ├── SizedBox (height: 12.0)
+        ├── Wrap (tags: [tags map: Container -> Text])
+        ├── SizedBox (height: 14.0)
+        ├── Divider
+        ├── SizedBox (height: 12.0)
+        └── Row (Move-in Date & Action)
+            ├── Column
+            │   ├── Text ('Move-in')
+            │   └── Text (moveInDate)
+            └── ElevatedButton (onPressed: Get.to(ChatScreen))
+                └── Text ('Start Chatting')
+
+
+// ================================================================================
+// CHAT SCREEN
+// FILE: lib/features/pg/screens/chat/chat_screen.dart
+// ================================================================================
+
+ChatScreen
+└── Scaffold
+    ├── AppBar
+    │   ├── IconButton (leading: Icon(Icons.arrow_back), onPressed: Get.back)
+    │   ├── Row (title)
+    │   │   ├── Stack -> [CircleAvatar, Positioned -> Container(Online green dot)]
+    │   │   ├── SizedBox (width: 10)
+    │   │   └── Expanded -> Column -> [Text(widget.ownerName), Text('Online')]
+    │   └── (actions: [IconButton(videocam_outlined), IconButton(phone_outlined), IconButton(logout)])
+    └── Column (body)
+        ├── ChatPinnedProperty
+        ├── Expanded
+        │   └── ListView.builder (messages)
+        │       └── ChatBubble
+        └── ChatInputBar
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ChatPinnedProperty
+// FILE: lib/features/pg/screens/chat/widgets/chat_pinned_property.dart
+// ================================================================================
+
+ChatPinnedProperty
+└── Container
+    └── Row
+        ├── ClipRRect (borderRadius: 10.0)
+        │   └── Image.asset (image)
+        ├── SizedBox (width: 12.0)
+        ├── Expanded
+        │   └── Column
+        │       ├── Text (title)
+        │       ├── SizedBox (height: 2.0)
+        │       ├── Text (price)
+        │       └── Text (location)
+        └── ElevatedButton (onPressed: Get.to(PropertyListScreen))
+            └── Text ('View')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ChatBubble
+// FILE: lib/features/pg/screens/chat/widgets/chat_bubble.dart
+// ================================================================================
+
+ChatBubble
+└── Align (alignment: isOutgoing ? Alignment.centerRight : Alignment.centerLeft)
+    └── Container
+        └── Column (crossAxisAlignment: isOutgoing ? CrossAxisAlignment.end : CrossAxisAlignment.start)
+            ├── Text (message)
+            ├── SizedBox (height: 4.0)
+            └── Row
+                ├── Text (time)
+                └── [Condition: if (isOutgoing)]
+                    ├── SizedBox (width: 4)
+                    └── Icon (Icons.done_all)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ChatInputBar
+// FILE: lib/features/pg/screens/chat/widgets/chat_input_bar.dart
+// ================================================================================
+
+ChatInputBar
+└── Container (border: Border(top: BorderSide))
+    └── SafeArea
+        └── Row
+            ├── IconButton (icon: Icon(Icons.add))
+            ├── SizedBox (width: 8)
+            ├── Expanded
+            │   └── Container (borderRadius: 24.0)
+            │       └── Row
+            │           ├── Icon (Icons.sentiment_satisfied_alt_outlined)
+            │           ├── SizedBox (width: 8)
+            │           └── Expanded -> TextField (controller: controller, hintText: 'Message...')
+            ├── SizedBox (width: 10)
+            └── GestureDetector (onTap: onSend)
+                └── Container (shape: BoxShape.circle)
+                    └── Icon (Icons.send_rounded)
+
+
+// ================================================================================
+// OWNER PROFILE SCREEN
+// FILE: lib/features/pg/screens/owner_profile/owner_profile.dart
+// ================================================================================
+
+OwnerProfileScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true)
+    │   └── (action: [IconButton(share), IconButton(logout)])
+    ├── SingleChildScrollView (body)
+    │   └── Padding
+    │       └── Column
+    │           ├── OwnerHeaderCard
+    │           ├── SizedBox (height: 20.0)
+    │           ├── OwnerStatsRow
+    │           ├── SizedBox (height: 20.0)
+    │           ├── OwnerContactCard
+    │           ├── SizedBox (height: 20.0)
+    │           ├── OwnerListedProperties
+    │           ├── SizedBox (height: 20.0)
+    │           ├── OwnerReviewCard
+    │           └── SizedBox (height: 28.0)
+    └── Container (bottomNavigationBar)
+        └── SafeArea
+            └── Row
+                ├── Expanded
+                │   └── ElevatedButton (onPressed: Get.to(BookVisitScreen))
+                │       └── Text ('Book Visit')
+                ├── SizedBox (width: 12.0)
+                └── Expanded
+                    └── ElevatedButton (onPressed: Get.to(RentalRequestFormScreen))
+                        └── Text ('Request Rental')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OwnerHeaderCard
+// FILE: lib/features/pg/screens/owner_profile/widgets/owner_header_card.dart
+// ================================================================================
+
+OwnerHeaderCard
+└── Column
+    ├── Center
+    │   └── Stack
+    │       ├── Container (shape: BoxShape.circle)
+    │       │   └── CircleAvatar (AssetImage(image))
+    │       └── Positioned
+    │           └── Container (shape: BoxShape.circle)
+    │               └── Icon (Icons.check)
+    ├── SizedBox (height: 10.0)
+    ├── Text (name)
+    ├── SizedBox (height: 2.0)
+    ├── Text (memberSince)
+    ├── SizedBox (height: 6.0)
+    ├── Container (Rating Pill)
+    │   └── Row
+    │       ├── Text ('$rating ★')
+    │       ├── SizedBox (width: 4)
+    │       └── Text ('($reviewCount Reviews)')
+    ├── SizedBox (height: 16.0)
+    └── Row
+        ├── Expanded
+        │   └── ElevatedButton.icon (onPressed: Get.to(ChatScreen))
+        │       ├── Icon (Icons.chat_bubble_outline)
+        │       └── Text ('Chat Now')
+        ├── SizedBox (width: 12.0)
+        └── Expanded
+            └── OutlinedButton.icon (onPressed: callOwner)
+                ├── Icon (Icons.phone_outlined)
+                └── Text ('Call Owner')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OwnerStatsRow
+// FILE: lib/features/pg/screens/owner_profile/widgets/owner_stats_row.dart
+// ================================================================================
+
+OwnerStatsRow
+└── Row (mainAxisAlignment: MainAxisAlignment.spaceAround)
+    ├── Container (_buildStatCircle: 12, Total Properties)
+    │   └── Column -> [Text('12'), SizedBox, Text('Total Properties')]
+    ├── Container (_buildStatCircle: 8, Active Listings)
+    │   └── Column -> [Text('8'), SizedBox, Text('Active Listings')]
+    └── Container (_buildStatCircle: 45, Properties Rented)
+        └── Column -> [Text('45'), SizedBox, Text('Properties Rented')]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OwnerContactCard
+// FILE: lib/features/pg/screens/owner_profile/widgets/owner_contact_card.dart
+// ================================================================================
+
+OwnerContactCard
+└── Column
+    ├── Text ('About Rajesh')
+    ├── SizedBox (height: 6.0)
+    ├── Text ('Dedicated property owner with over 5 years of experience...')
+    ├── SizedBox (height: 14.0)
+    └── Container
+        └── Column
+            ├── Row (_buildContactTile: Phone) -> [Container -> Icon(Icons.phone_outlined), SizedBox, Expanded -> Column -> [Text, Text]]
+            ├── SizedBox (height: 10.0)
+            ├── Row (_buildContactTile: Email) -> [Container -> Icon(Icons.email_outlined), SizedBox, Expanded -> Column -> [Text, Text]]
+            ├── SizedBox (height: 10.0)
+            ├── Row (_buildContactTile: Preferred Languages) -> [Container -> Icon(Icons.translate_outlined), SizedBox, Expanded -> Column -> [Text, Text]]
+            ├── SizedBox (height: 12.0)
+            ├── Divider
+            ├── SizedBox (height: 10.0)
+            └── Row
+                ├── _StatItem (Response Rate) -> Column -> [Text('Response Rate'), SizedBox, Text('98% Rate')]
+                └── _StatItem (Avg. Time) -> Column -> [Text('Avg. Time'), SizedBox, Text('2h Avg. Time')]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OwnerListedProperties
+// FILE: lib/features/pg/screens/owner_profile/widgets/owner_listed_properties.dart
+// ================================================================================
+
+OwnerListedProperties
+└── Column
+    ├── RSectionHeading (title: 'Listed Properties', buttonTitle: 'View all', onPressed: Get.to(PropertyListScreen))
+    ├── SizedBox (height: 12.0)
+    ├── Container (_buildPropertyTile 1: Modern Studio)
+    │   └── Row
+    │       ├── ClipRRect (borderRadius: 12.0) -> Image.asset (images.propertyHome1)
+    │       ├── SizedBox (width: 12.0)
+    │       └── Expanded -> Column -> [Row -> [Text, Row -> [Icon, Text]], Text, SizedBox, Text]
+    ├── SizedBox (height: 10.0)
+    └── Container (_buildPropertyTile 2: Luxury Loft)
+        └── Row
+            ├── ClipRRect (borderRadius: 12.0) -> Image.asset (images.propertyHome2)
+            ├── SizedBox (width: 12.0)
+            └── Expanded -> Column -> [Row -> [Text, Row -> [Icon, Text]], Text, SizedBox, Text]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: OwnerReviewCard
+// FILE: lib/features/pg/screens/owner_profile/widgets/owner_review_card.dart
+// ================================================================================
+
+OwnerReviewCard
+└── Container
+    └── Column
+        ├── Row
+        │   ├── CircleAvatar (initials)
+        │   ├── SizedBox (width: 10)
+        │   └── Expanded
+        │       └── Column
+        │           ├── Text (name)
+        │           └── Row -> [1..rating: Icon(Icons.star)]
+        ├── SizedBox (height: 8.0)
+        └── Text ('"$review"')
+
+
+// ================================================================================
+// PROFILE SCREEN
+// FILE: lib/features/pg/screens/profile/profile.dart
+// ================================================================================
+
+ProfileScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Profile')
+    │   └── (action: [IconButton(edit -> Get.to(EditProfileScreen)), IconButton(logout)])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── ProfileHeaderCard
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── ProfileActivityMenu
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── ProfileSettingsMenu
+                └── SizedBox (height: 36.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ProfileHeaderCard
+// FILE: lib/features/pg/screens/profile/widgets/profile_header_card.dart
+// ================================================================================
+
+ProfileHeaderCard
+└── Column
+    ├── Center
+    │   └── GestureDetector (onTap: Get.to(EditProfileScreen))
+    │       └── Stack
+    │           ├── Container (shape: BoxShape.circle)
+    │           │   └── CircleAvatar (AssetImage(images.userProfileImage))
+    │           └── Positioned
+    │               └── Container (shape: BoxShape.circle)
+    │                   └── Icon (Icons.check)
+    ├── SizedBox (height: 12.0)
+    ├── Text (AppTexts.userName)
+    ├── SizedBox (height: 4.0)
+    ├── Row
+    │   ├── Icon (Icons.location_on_outlined)
+    │   ├── SizedBox (width: 4)
+    │   └── Text (AppTexts.userCity)
+    ├── SizedBox (height: 20.0)
+    └── Container
+        └── Column
+            ├── Row
+            │   ├── Expanded -> Column (_buildDetailItem: FULL NAME) -> [Text, SizedBox, Text]
+            │   ├── SizedBox (width: 16.0)
+            │   └── Expanded -> Column (_buildDetailItem: EMAIL) -> [Text, SizedBox, Text]
+            ├── SizedBox (height: 14.0)
+            ├── Row
+            │   ├── Expanded -> Column (_buildDetailItem: PHONE) -> [Text, SizedBox, Text]
+            │   ├── SizedBox (width: 16.0)
+            │   └── Expanded -> Column (_buildDetailItem: GENDER) -> [Text, SizedBox, Text]
+            ├── SizedBox (height: 14.0)
+            └── Row
+                ├── Expanded -> Column (_buildDetailItem: DOB) -> [Text, SizedBox, Text]
+                ├── SizedBox (width: 16.0)
+                └── Expanded -> SizedBox()
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ProfileActivityMenu
+// FILE: lib/features/pg/screens/profile/widgets/profile_activity_menu.dart
+// ================================================================================
+
+ProfileActivityMenu
+└── Column
+    ├── Text ('ACTIVITY')
+    ├── SizedBox (height: 10.0)
+    └── Container
+        └── Column
+            ├── ListTile (_buildMenuItem: Book Visit -> Get.to(BookVisitScreen))
+            │   ├── Container (leading) -> Icon (Icons.calendar_month_outlined)
+            │   ├── Text (title: 'Book Visit')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            ├── ListTile (_buildMenuItem: Wishlist -> Get.to(WishlistScreen))
+            │   ├── Container (leading) -> Icon (Icons.favorite_border_rounded)
+            │   ├── Text (title: 'Wishlist')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            ├── ListTile (_buildMenuItem: Rental Request -> Get.to(ReviewRentalRequestScreen))
+            │   ├── Container (leading) -> Icon (Icons.assignment_outlined)
+            │   ├── Text (title: 'Rental Request')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            ├── ListTile (_buildMenuItem: Rent Agreement -> Get.to(RentAgreementScreen))
+            │   ├── Container (leading) -> Icon (Icons.description_outlined)
+            │   ├── Text (title: 'Rent Agreement')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            ├── ListTile (_buildMenuItem: Pay Rent -> Get.to(PayRentScreen))
+            │   ├── Container (leading) -> Icon (Icons.account_balance_wallet_outlined)
+            │   ├── Text (title: 'Pay Rent')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            └── ListTile (_buildMenuItem: Reviews -> Get.to(ReviewsScreen))
+                ├── Container (leading) -> Icon (Icons.star_border_rounded)
+                ├── Text (title: 'Reviews')
+                └── Icon (trailing: Icons.chevron_right)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ProfileSettingsMenu
+// FILE: lib/features/pg/screens/profile/widgets/profile_settings_menu.dart
+// ================================================================================
+
+ProfileSettingsMenu
+└── Column
+    ├── Text ('SETTINGS')
+    ├── SizedBox (height: 10.0)
+    └── Container
+        └── Column
+            ├── ListTile (_buildMenuItem: Contact Us -> Get.to(ContactUsScreen))
+            │   ├── Container (leading) -> Icon (Icons.headset_mic_outlined)
+            │   ├── Text (title: 'Contact Us')
+            │   └── Icon (trailing: Icons.chevron_right)
+            ├── Divider
+            └── ListTile (Logout -> showDialog)
+                ├── Container (leading) -> Icon (Icons.logout_rounded)
+                └── Text (title: 'Logout')
+
+
+// ================================================================================
+// EDIT PROFILE SCREEN
+// FILE: lib/features/pg/screens/profile/edit_profile/edit_profile.dart
+// ================================================================================
+
+EditProfileScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, titleText: 'Edit Profile')
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── Center (Avatar with camera change button)
+                │   └── Stack
+                │       ├── Container (shape: BoxShape.circle)
+                │       │   └── CircleAvatar (AssetImage(images.userProfileImage))
+                │       └── Positioned
+                │           └── Container (shape: BoxShape.circle)
+                │               └── Icon (Icons.camera_alt_rounded)
+                ├── SizedBox (height: 24.0)
+                ├── Container (Form Inputs Container)
+                │   └── Column
+                │       ├── Column (_buildEditField: FULL NAME) -> [Text, SizedBox, TextField(nameController)]
+                │       ├── SizedBox (height: 16.0)
+                │       ├── Column (_buildEditField: EMAIL) -> [Text, SizedBox, TextField(emailController)]
+                │       ├── SizedBox (height: 16.0)
+                │       ├── Column (_buildEditField: PHONE) -> [Text, SizedBox, TextField(phoneController)]
+                │       ├── SizedBox (height: 16.0)
+                │       ├── Column (_buildEditField: CITY / LOCATION) -> [Text, SizedBox, TextField(cityController)]
+                │       ├── SizedBox (height: 16.0)
+                │       ├── Column (_buildEditField: GENDER) -> [Text, SizedBox, TextField(genderController)]
+                │       ├── SizedBox (height: 16.0)
+                │       └── Column (_buildEditField: DATE OF BIRTH) -> [Text, SizedBox, TextField(dobController)]
+                ├── SizedBox (height: 28.0)
+                ├── SizedBox (width: double.infinity, height: 52)
+                │   └── ElevatedButton (Save Changes)
+                │       └── Text ('Save Changes')
+                └── SizedBox (height: 20.0)
+
+
+// ================================================================================
+// CONTACT US SCREEN
+// FILE: lib/features/pg/screens/contact_us/contact_us.dart
+// ================================================================================
+
+ContactUsScreen
+└── Scaffold
+    ├── RAppBar (appBar, showBackArrow: true, showLogout: true)
+    │   └── (title: Column -> [Text('Contact Us'), Text('Get in touch with our support team')])
+    └── SingleChildScrollView (body)
+        └── Padding
+            └── Column
+                ├── ContactSupportCard
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── ContactInfoTiles
+                ├── SizedBox (height: AppSizes.spaceBtwSections)
+                ├── ContactMessageForm
+                └── SizedBox (height: 36.0)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ContactSupportCard
+// FILE: lib/features/pg/screens/contact_us/widgets/contact_support_card.dart
+// ================================================================================
+
+ContactSupportCard
+└── Container
+    └── Column
+        ├── Container (shape: BoxShape.circle)
+        │   └── Icon (Icons.headset_mic_rounded)
+        ├── SizedBox (height: 14.0)
+        ├── Text ('Customer Support')
+        ├── SizedBox (height: 18.0)
+        └── Row
+            ├── Expanded
+            │   └── OutlinedButton (Call)
+            │       └── Text ('Call')
+            ├── SizedBox (width: 14.0)
+            └── Expanded
+                └── ElevatedButton (Chat)
+                    └── Text ('Chat')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ContactInfoTiles
+// FILE: lib/features/pg/screens/contact_us/widgets/contact_info_tiles.dart
+// ================================================================================
+
+ContactInfoTiles
+└── Column
+    ├── Container (_buildInfoCard: Email Support)
+    │   └── Row
+    │       ├── Container -> Icon (Icons.email_outlined)
+    │       ├── SizedBox (width: 14.0)
+    │       └── Expanded -> Column -> [Text('Email Support'), SizedBox, Text('support@renteasy.com')]
+    ├── SizedBox (height: 12.0)
+    ├── Container (_buildInfoCard: Phone Support)
+    │   └── Row
+    │       ├── Container -> Icon (Icons.phone_outlined)
+    │       ├── SizedBox (width: 14.0)
+    │       └── Expanded -> Column -> [Text('Phone Support'), SizedBox, Text('+91 98765 43210')]
+    ├── SizedBox (height: 12.0)
+    └── Container (_buildInfoCard: Office Address)
+        └── Row
+            ├── Container -> Icon (Icons.location_on_outlined)
+            ├── SizedBox (width: 14.0)
+            └── Expanded -> Column -> [Text('Office Address'), SizedBox, Text('RentEasy Office, Gujarat, India')]
+
+
+// ================================================================================
+// EXTRACTED WIDGET: ContactMessageForm
+// FILE: lib/features/pg/screens/contact_us/widgets/contact_message_form.dart
+// ================================================================================
+
+ContactMessageForm
+└── Column
+    ├── Text ('Send us a message')
+    ├── SizedBox (height: 14.0)
+    ├── Column (_buildInputField: Full Name) -> [Text('Full Name'), SizedBox, TextField(hintText: 'Enter your full name')]
+    ├── SizedBox (height: 12.0)
+    ├── Column (_buildInputField: Email) -> [Text('Email'), SizedBox, TextField(hintText: 'Enter your email address')]
+    ├── SizedBox (height: 12.0)
+    ├── Column (_buildInputField: Subject) -> [Text('Subject'), SizedBox, TextField(hintText: 'What is this about?')]
+    ├── SizedBox (height: 12.0)
+    ├── Column (_buildInputField: Message) -> [Text('Message'), SizedBox, TextField(maxLines: 4, hintText: 'Type your message here...')]
+    ├── SizedBox (height: 20.0)
+    └── SizedBox (width: double.infinity)
+        └── ElevatedButton (Send Message)
+            └── Text ('Send Message')
+
+
+// ================================================================================
+// SHARED REUSABLE EXTRACTED WIDGETS
+// ================================================================================
+
+// ================================================================================
+// EXTRACTED WIDGET: RAppBar
+// FILE: lib/commons/widgets/app_bar/appbar.dart
+// ================================================================================
+
+RAppBar
+└── Container
+    └── Padding
+        └── AppBar
+            ├── [Condition: showBackArrow == true]
+            │   └── IconButton (leading: Icon(Icons.arrow_back), onPressed: pop/return)
+            │   [Condition: leadingIcon != null]
+            │   └── IconButton (leading: Icon(leadingIcon), onPressed: leadingOnPressed)
+            │   [Condition: else]
+            │   └── null
+            ├── (title: widget.title ?? Text(titleText))
+            └── (actions: action ?? [effectiveTrailing])
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RSearchContainer
+// FILE: lib/commons/widgets/search_bar/search_container.dart
+// ================================================================================
+
+RSearchContainer
+└── GestureDetector (onTap: onTap)
+    └── Container
+        └── Row
+            ├── [Condition: if (icon != null)]
+            │   ├── Icon (icon, size: AppSizes.iconMd)
+            │   └── SizedBox (width: 12.0)
+            ├── Expanded
+            │   ├── [Condition: if (readOnly == true)]
+            │   │   └── Text (text)
+            │   └── [Condition: else]
+            │       └── TextField (controller: controller, onChanged: onChanged)
+            └── [Condition: if (trailingIcon != null)]
+                ├── SizedBox (width: 8.0)
+                └── GestureDetector (onTap: onTrailingTap)
+                    └── Icon (trailingIcon, color: AppColors.button)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RFloatingActionButton
+// FILE: lib/commons/widgets/floating_action_button/floating_action_button.dart
+// ================================================================================
+
+RFloatingActionButton
+└── FloatingActionButton (heroTag: heroTag, onPressed: Get.to(PropertyMapScreen))
+    └── Icon (icon: Icons.map_outlined)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RSectionHeading
+// FILE: lib/commons/widgets/texts/section_heading.dart
+// ================================================================================
+
+RSectionHeading
+└── Row
+    ├── Text (title)
+    └── [Condition: if (showActionButton == true)]
+        └── TextButton (onPressed: onPressed)
+            └── Text (buttonTitle)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RFilterChipPill
+// FILE: lib/commons/widgets/chips/filter_chip_pill.dart
+// ================================================================================
+
+RFilterChipPill
+└── GestureDetector (onTap: onTap)
+    └── AnimatedContainer
+        └── Row
+            ├── [Condition: if (icon != null)]
+            │   ├── Icon (icon)
+            │   └── SizedBox (width: 6.0)
+            └── Text (label)
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RPropertyCardVertical
+// FILE: lib/commons/widgets/property_cards/property_card_vertical.dart
+// ================================================================================
+
+RPropertyCardVertical
+└── GestureDetector (onTap: onViewDetailsTap ?? Get.to(PropertyDetailsScreen))
+    └── Container
+        └── Column
+            ├── Stack (Top Image)
+            │   ├── ClipRRect (borderRadius: only(topLeft: 16.0, topRight: 16.0))
+            │   │   └── Image.asset (image)
+            │   ├── [Condition: if (isFeatured == true)]
+            │   │   └── Positioned (bottom: 12.0, left: 12.0)
+            │   │       └── Container -> Text ('Featured')
+            │   └── Positioned (top: 12.0, right: 12.0)
+            │       └── GestureDetector (onTap: onFavoriteTap)
+            │           └── Container (shape: BoxShape.circle)
+            │               └── Icon (isFavorite ? Icons.favorite : Icons.favorite_border)
+            └── Padding
+                └── Column
+                    ├── Row
+                    │   ├── Expanded -> Text (title)
+                    │   ├── SizedBox (width: 8.0)
+                    │   └── Container -> Row -> [Icon(Icons.star), SizedBox, Text(rating)]
+                    ├── SizedBox (height: 6.0)
+                    ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+                    ├── [Condition: if (tags != null && tags!.isNotEmpty)]
+                    │   ├── SizedBox (height: 10.0)
+                    │   └── Wrap -> [tags map: Container -> Text]
+                    ├── SizedBox (height: 10.0)
+                    ├── Divider
+                    ├── SizedBox (height: 12.0)
+                    └── Row
+                        ├── RichText (price /mo)
+                        └── GestureDetector (onTap: onViewDetailsTap ?? Get.to(PropertyDetailsScreen))
+                            └── Container (borderRadius: 20.0)
+                                └── Text ('View Details')
+
+
+// ================================================================================
+// EXTRACTED WIDGET: RPropertyCardHorizontal
+// FILE: lib/commons/widgets/property_cards/property_card_horizontal.dart
+// ================================================================================
+
+RPropertyCardHorizontal
+└── GestureDetector (onTap: onTap)
+    └── Container
+        └── Row
+            ├── Stack (Left Thumbnail)
+            │   ├── ClipRRect (borderRadius: 12.0)
+            │   │   └── Image.asset (image)
+            │   └── [Condition: if (rating != null)]
+            │       └── Positioned (top: 4, left: 4)
+            │           └── Container
+            │               └── Row -> [Icon(Icons.star), SizedBox, Text(rating!)]
+            ├── SizedBox (width: 12.0)
+            └── Expanded (Right Information)
+                └── Column
+                    ├── Text (title)
+                    ├── SizedBox (height: 4.0)
+                    ├── Row -> [Icon(Icons.location_on_outlined), SizedBox, Expanded -> Text(location)]
+                    ├── SizedBox (height: 6.0)
+                    └── Row
+                        ├── RichText (price /mo)
+                        └── [Condition: if (showViewButton == true)]
+                            └── Container (borderRadius: 16.0)
+                                └── Text ('View')

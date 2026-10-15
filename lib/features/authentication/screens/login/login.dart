@@ -24,23 +24,23 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header (Logo, Title, Subtitle)
+              // Screen-specific custom widget: Displays logo, greeting title, and subtitle
               const AppLoginHeader(),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Form (Email, Password, Forgot Pass, Sign In Button)
+              // Screen-specific custom widget: Contains email/password form fields & sign-in action
               AppLoginForm(),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Divider
+              // Shared reusable widget: Divides form from social authentication options
               const AppformDivider(dividerText: AppTexts.or),
               SizedBox(height: AppSizes.spaceBtwSections),
 
-              // Social Login Button (Google)
+              // Shared reusable widget: Third-party social login buttons (Google auth)
               const AppSocialButtons(),
               const SizedBox(height: 28),
 
-              // Footer: Don't have an account? Sign Up
+              // Footer: Navigation link to Sign Up screen for new users
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
