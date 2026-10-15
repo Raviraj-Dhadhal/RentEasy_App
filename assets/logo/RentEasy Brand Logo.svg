@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Mask to punch the window cutouts through the solid building -->
+    <mask id="window-cutouts">
+      <rect width="200" height="200" fill="#ffffff" />
+      <!-- Top row windows -->
+      <rect x="115" y="55" width="8" height="9" rx="1.5" fill="#000000" />
+      <rect x="131" y="55" width="8" height="9" rx="1.5" fill="#000000" />
+      <!-- Middle row windows -->
+      <rect x="115" y="72" width="8" height="9" rx="1.5" fill="#000000" />
+      <rect x="131" y="72" width="8" height="9" rx="1.5" fill="#000000" />
+      <!-- Lower right column windows -->
+      <rect x="131" y="89" width="8" height="9" rx="1.5" fill="#000000" />
+      <rect x="131" y="106" width="8" height="9" rx="1.5" fill="#000000" />
+    </mask>
+  </defs>
+
+  <!-- Outer circular frame -->
+  <circle 
+    cx="100" 
+    cy="100" 
+    r="80" 
+    fill="none" 
+    stroke="#4143D5" 
+    stroke-width="8" 
+  />
+
+  <!-- High-rise building silhouette with negative-space windows -->
+  <path 
+    d="M95 72 V45 C95 42 97 40 100 40 H146 C149 40 151 42 151 45 V130 H95 Z" 
+    fill="#4143D5" 
+    mask="url(#window-cutouts)" 
+  />
+
+  <!-- Small left building/chimney extension -->
+  <path 
+    d="M55 94 V82 H65 V94" 
+    fill="none" 
+    stroke="#4143D5" 
+    stroke-width="8" 
+    stroke-linejoin="miter" 
+  />
+
+  <!-- White cutout to hide the building behind the foreground house -->
+  <path 
+    d="M48 134 V106 L85 75 L122 106 V134 Z" 
+    fill="#ffffff" 
+  />
+
+  <!-- Foreground house gable/roof -->
+  <path 
+    d="M40 109 L85 72 L130 109" 
+    fill="none" 
+    stroke="#4143D5" 
+    stroke-width="8" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+
+  <!-- Foreground house walls -->
+  <line x1="51" y1="105" x2="51" y2="130" stroke="#4143D5" stroke-width="8" />
+  <line x1="119" y1="105" x2="119" y2="130" stroke="#4143D5" stroke-width="8" />
+
+  <!-- Center doorway -->
+  <path 
+    d="M77 130 V107 H93 V130" 
+    fill="none" 
+    stroke="#4143D5" 
+    stroke-width="8" 
+    stroke-linejoin="miter" 
+  />
+
+  <!-- Ground / baseline segments -->
+  <line x1="36" y1="130" x2="51" y2="130" stroke="#4143D5" stroke-width="8" stroke-linecap="round" />
+  <line x1="119" y1="130" x2="164" y2="130" stroke="#4143D5" stroke-width="8" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,63 @@
+name: renteasy_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  firebase_core: ^4.15.0
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.3.0 # flutter pub add flutter_svg
+
+  # State Management
+  get: ^4.7.3 # flutter pub add get for GetxController
+  get_storage: ^2.1.1 # flutter pub add get_storage for local storage
+
+
+  #utility package
+  http: ^1.6.0 # flutter pub add http
+  intl: ^0.20.3 # flutter pub add intl
+  logger: ^2.8.0 # flutter pub add logger
+  url_launcher: ^6.3.3 #flutter pub add url_launcher
+
+  smooth_page_indicator: ^3.0.0 # flutter pub add smooth_page_indicator
+  iconsax_flutter: ^1.0.1 # flutter pub add iconsax_flutter
+
+  
+  # flutter_native_splash: ^2.4.8 #run this command, flutter pub get
+  # flutter pub run flutter_native_splash:remove to remove it
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  #---- LOCAL ASSETS ----
+  assets:
+    - assets/logo/
+    - assets/images/
+    - assets/images/on_boarding/
+    - assets/images/users/
+    - assets/images/area-city/
+    - assets/images/property/
+
+  #---- LOCAL FONTS ----
+  fonts:
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 900
+
+    - family: cursive
+      fonts:
+        - asset: assets/fonts/CedarvilleCursive-Regular.ttf
