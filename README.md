@@ -1,3 +1,3 @@
-# nestora_app
+# RentEasy_App
 
 A new Flutter project.
